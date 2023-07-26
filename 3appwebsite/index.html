@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Third Party Applications</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<!--    link the stylesheets here-->
+
+  <link rel="stylesheet" href="fonts.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<div class="tab" style="padding: 25px">
+  <button class="tablink" style = margin-top:15>Home</button>
+  <div class="dropdown">
+    <button class="tablink dropbtn" onclick="DropDown()" style = "margin-top:15">Projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">Link 1</a>
+      <a href="#">Hello there friend</a>
+      <a href="#">No</a>
+    </div>
+  </div>
+  <button class="tablink" style = margin-top:15>About</button>
+</div>
+
+<script>
+//    function reveal() {
+//      var reveals = document.querySelectorAll(".reveal");
+//      for (var i = 0; i < reveals.length; i++) {
+//        var windowHeight = window.innerHeight;
+//        var elementTop = reveals[i].getBoundingClientRect().top;
+//        var elementVisible = 150;
+//        if (elementTop < windowHeight - elementVisible) {
+//          reveals[i].classList.add("active");
+//        } else {
+//          reveals[i].classList.remove("active");
+//        }
+//      }
+//    }
+
+//    window.addEventListener("scroll", reveal);
+
+//    reveal();
+
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function DropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+
+</script>
+
+<div><img class="toptest" src="images/toptest.png"></img></div>
+
+<body>
+<div class="container">
+  <h1>A WEBSITE</h1>
+
+  <div>
+    <section>
+        <h2>About this random shit</h2>
+        <p class="reveal">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. <span class="important">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</span> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
+    </section>
+  </div>
+  <div>
+    <section>
+        <h2>More about this random shit</h2>
+        <p class="reveal"><span class="important">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum.</p>
+    </section>
+    </div>
+  </div>
+</body>
+<div id="bottom">
+  <button class="tablink2"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="40" height="40"></img></a></button>
+  <button class="tablink2"><a href="https://www.tiktok.com/@thirdpartyapplications?is_from_webapp=1&sender_device=pc"><img src="images/Tiktok.png" width="40" height="40"></img></a></button>
+  <button class="tablink2"><a href="https://youtube.com/@ThirdPartyApplications"><img src="images/Youtube.png" width="40" height="40"></img></a></button>
+  <button class="tablink2"><a href="https://www.reddit.com/r/3rdpartyApplications/"><img src="images/Reddit.png" width="40" height="40"></img></a></button>
+</div>
+
+</html>
