@@ -180,6 +180,64 @@ p {
   max-width: 150%;
 }
 
+.body2{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  position: absolute;
+  float: left;
+}
+
+.box1 {
+  float:left;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 25%;
+  background-color: #E25CF2;
+  transition: 2s;
+}
+
+.box2 {
+  float:left;
+  height: 100vh;
+  width: 25%;
+  background-color: #BF60FB;
+
+  transition: 2s;
+}
+
+.box3 {
+  float:left;
+  height: 100vh;
+  width: 25%;
+  background-color: #8C64E6;
+
+  transition: 2s;
+}
+
+.box4 {
+  float:left;
+  height: 100vh;
+  width: 25%;
+  background-color: #6065FB;
+
+  transition: 2s;
+}
+
+/*.box1:hover {
+  width: 100%;
+}*/
+
 #bottom{
   color: #E8E8E8;
   font-family: 'Robotao', sans-serif;

@@ -37,23 +37,6 @@
 </div>
 
 <script>
-//    function reveal() {
-//      var reveals = document.querySelectorAll(".reveal");
-//      for (var i = 0; i < reveals.length; i++) {
-//        var windowHeight = window.innerHeight;
-//        var elementTop = reveals[i].getBoundingClientRect().top;
-//        var elementVisible = 150;
-//        if (elementTop < windowHeight - elementVisible) {
-//          reveals[i].classList.add("active");
-//        } else {
-//          reveals[i].classList.remove("active");
-//        }
-//      }
-//    }
-
-//    window.addEventListener("scroll", reveal);
-
-//    reveal();
 
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
@@ -71,6 +54,48 @@
     }
   }
 
+  // For the the color block carousel. Must rotate between the blocks, pause when hover, and also expand and play the video inside.
+  var responsiveSlider = function() {
+    var slider = document.getElementById("slider");
+    var sliderWidth = slider.offsetWidth;
+    var slideList = document.getElementById("sliderWrap");
+    var count = 1;
+    var items = slideList.querySelectorAll("li").length;
+    var next = document.getElementById("next");
+
+    window.addEventListener('resize', function() {
+      sliderWidth = slider.offsetWidth + "px";
+
+    });
+
+    var nextSlide = function() {
+      if(count < items) {
+        if (count < 4){
+          slideList.style.left = "-" + count * ((sliderWidth/2) + 5) + "px";
+        }
+        else {
+          slideList.style.left = "-" + count * sliderWidth + "px";
+        }
+        count++;
+        console.log(sliderWidth);
+      }
+      else if(count = items) {
+        slideList.style.left = "0px";
+        count = 1;
+        console.log(sliderWidth);
+      }
+    };
+
+    setInterval(function() {
+      nextSlide()
+    }, 4000);
+
+    };
+
+    window.onload = function() {
+    responsiveSlider();
+    }
+
 </script>
 
 <div><img class="toptest" src="images/toptest.png"></img></div>
@@ -78,7 +103,18 @@
 <body>
 <div class="container">
   <h1>A WEBSITE</h1>
+</body>
 
+<div class="body2" id="slider">
+  <div class="wrapper" id="sliderWrap">
+    <li class="block box1"></li>
+    <li class="block box2"></li>
+    <li class="block box3"></li>
+    <li class="block box4"></li>
+  </div>
+</div>
+
+<body>
   <div>
     <section>
         <h2>About this random shit</h2>
