@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Third Party Applications</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<!--    link the stylesheets here-->
+
+  <link rel="stylesheet" href="fonts.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<div class="tab" style="padding: 25px">
+  <button class="tablink" style = margin-top:15><a href="index.html">Home</a></button>
+
+  <div class="dropdown">
+    <button class="tablink dropbtn" onclick="DropDown()" style = "margin-top:15">Projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="spacegame.html">Space Game</a>
+      <a href="sp.html">Scholastic Painter</a>
+      <a href="redink.html">Red Ink</a>
+      <a href="deadgood.html">A Dead Good Time</a>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function DropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+
+</script>
+
+
+<div><img class="toptest" src="images/toptest.png"></img></div>
+
+</html>
