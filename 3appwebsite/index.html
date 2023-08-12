@@ -22,7 +22,7 @@
 </head>
 
 <div class="tab" style="padding: 25px">
-  <button class="tablink" style = margin-top:15>Home</button>
+  <button class="tablink" style="margin-top:15">Home</button>
   <div class="dropdown">
     <button class="tablink dropbtn" onclick="DropDown()" style = "margin-top:15">Projects
       <i class="fa fa-caret-down"></i>
@@ -75,13 +75,13 @@
           slideList.style.left = "-" + count * ((sliderWidth/2) + 5) + "px";
         }
         else {
-          slideList.style.left = "-" + count * sliderWidth + "px";
+          slideList.style.left = "-" + (count * sliderWidth) + "px";
         }
         count++;
         console.log(sliderWidth);
       }
       else if(count = items) {
-        slideList.style.left = "0px";
+        slideList.style.left = "26.65vw";
         count = 1;
         console.log(sliderWidth);
       }
@@ -106,7 +106,7 @@
   <h1>A WEBSITE</h1>
 </body>
 
-<div class="body2" id="slider">
+<div class="body2" style="margin-top: 100vh; margin-bottom:100vh;" id="slider">
   <div class="wrapper" id="sliderWrap">
     <li class="block box1"></li>
     <li class="block box2"></li>
