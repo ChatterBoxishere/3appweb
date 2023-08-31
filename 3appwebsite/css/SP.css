@@ -1,0 +1,27 @@
+/*
+SP COLOR PALLET
+Orange:#FF933E rgb(255, 147, 62)
+Red:#FF503D rgb(255, 80, 61)
+Blue:#668BDB rgb(102, 139, 219)
+Pink-ish:#FF7870 rgb(255, 120, 112)
+Green:#CCB742 rgb(204, 183, 66)
+Brown:#5A2F0D rgb(90, 47, 13)
+White:#FFFFFF rgb(255, 255, 255)
+Tan:#FABC55 rgb(250, 188, 85)
+*/
+
+@font-face {
+font-family: Ctext;
+src:url(easvhs.ttf);
+}
+
+body {
+    margin: 0 auto;
+    width: 700px;
+    height: 100%;
+  	padding: 50px 50px;
+  	text-align: justify;
+    font-family: Ctext;
+    background-color: #FABC55;
+    text-align: center;
+    color: #E8E8E8;
