@@ -275,3 +275,8 @@ p {
   border-width: 10px;
   border-style: solid none none none;*/
 }
+
+@font-face {
+font-family: neuropol;
+src:url(../Fonts/neuropol.otf);
+}

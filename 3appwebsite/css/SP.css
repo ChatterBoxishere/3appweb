@@ -12,7 +12,7 @@ Tan:#FABC55 rgb(250, 188, 85)
 
 @font-face {
 font-family: Ctext;
-src:url(easvhs.ttf);
+src:url(../Fonts/easvhs.ttf);
 }
 
 body {
