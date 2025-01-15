@@ -1,0 +1,458 @@
+body {
+    margin: 0 auto;
+    height: 100%;
+  	text-align: justify;
+    font-family: customfont;
+    background-color: #06020D;
+    text-align: center;
+    color: #E8E8E8;
+}
+
+.scrollvideo {
+  width: 40%;
+  float: left;
+  position: static;
+  padding: 50px 0px;
+}
+
+.containerhead{
+  width: 90%;
+  margin-top: 50px;
+  padding: 50px 50px;
+}
+
+.pagehead{
+  text-align: left;
+  position: absolute;
+  padding-left: 30%;
+  font-size: 150px;
+  margin-top: 15vh;
+}
+
+.pagesubhead{
+  text-align: left;
+  position: absolute;
+  padding-left: 30%;
+  margin-top: 47vh;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin: 0 auto;
+  width: 750px;
+  padding: 50px 0;
+  text-align: center;
+
+}
+
+h1 {
+  color: #E8E8E8;
+  font-size: 100px;
+  font-weight: lighter;
+  margin-top: 30px;
+}
+
+h2 {
+  color: #E8E8E8;
+  font-size: 75px;
+
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  padding-left: 50px;
+  margin-right: 50px;
+  font-size: 25px;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.important{
+  color: #E8E8E8;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.tab{
+  background-color: #06020D;
+  font-weight: bolder;
+
+  top: 0;
+  margin: 0;
+	left: 0px;
+	float: left;
+
+  margin-left: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
+  text-indent: 1250px;
+
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  width: 97%;
+  height: 7%;
+
+  overflow: hidden;
+
+  border: #333333 thick solid;
+  border-width: 10px;
+  border-radius: 0px 0px 25px 25px;
+  border-style: none none solid none;
+  border-color: #06020D;
+}
+
+.tablink {
+  font-family: customfont;
+  background-color: inherit;
+  color: #E8E8E8;
+  float: left;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.tablink:hover {
+	font-weight: bold;
+	font-size: 22px;
+	background-clip: text;
+	background-size: 100%;
+}
+
+.tablink2 {
+  border: none;
+  cursor: pointer;
+	margin-left: 0;
+  transition: 0.3s;
+	background-color: rgba(0,0,0,0);
+
+	border-radius: 20px;
+}
+
+.tablink2:hover {
+  transform: scale(1.25);
+}
+
+
+.show {
+  display: block;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar {
+  text-align: left;
+  padding-top: 10px;
+  width: 25%;
+  box-sizing: border-box;
+  float: left;
+  background-color: #E25CF2;
+}
+
+.leftbar {
+  text-align: left;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding-left: 50px;
+}
+
+.mission{
+  width: 60%;
+  float: right;
+  margin-bottom: 20vh;
+}
+
+.mistext{
+  padding-left: 0px;
+  margin-left: 0;
+}
+ .misbutt {
+   font-family: customfont;
+   font-size: 60px;
+   background-color:#6065FB;
+   color: #E8E8E8;
+   float:left;
+   height: 80px;
+   overflow: hidden;
+   white-space: nowrap;
+   width: 18.15%;
+
+
+   border: none;
+   border-radius: 3px;
+   padding: 20px;
+
+   cursor: pointer;
+   transition: 0.5s;
+ }
+
+ .misbutt:hover {
+   background-color: #E25CF2;
+   width: 44%;
+ }
+
+ .GameTitle {
+   font-size: 95px;
+   padding-top: 75px;
+   margin-top: 0px;
+   color: white;
+ }
+
+.spaceside {
+  text-align: left;
+  width: 40%;
+  margin-right: 5%;
+  background-color: inherit;
+  height: 100%;
+  margin-top: 0px;
+}
+
+.SpaceTab {
+  background-color: #E25CF2;
+  height: 150px;
+  max-height: 150px;
+  padding-top: 40px;
+  overflow: hidden;
+  margin-right: 0;
+}
+
+.gamestats{
+  box-sizing: border-box;
+  float: left;
+  width: 35%;
+  background-color: inherit;
+  margin: 0;
+  padding: 0px;
+  padding-left: 60px;
+}
+
+.statimg{
+  padding-top: 0px;
+  margin-top: 0px;
+  width: 110px;
+}
+
+.stattitle {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 10px;
+}
+
+.stattext {
+  font-size: 45px;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 0.7;
+}
+
+
+.spacestory{
+  margin: 0px;
+  right: 0;
+}
+
+.StoryTab {
+  background-color: #E25CF2;
+  height: 250px;
+  margin: 0px;
+}
+
+.storytext{
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding: 50px;
+}
+
+button {
+  style: none;
+  background-color: none;
+}
+
+.VidSection {
+  height: 100vh;
+  margin-top: 60px;
+  margin-bottom: 200px;
+}
+
+.homevideo {
+  width: 73%;
+  padding-left: 2px;
+  position: static;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.MoveVid {
+  height: 175vh;
+  background-color: #E25CF2;
+}
+
+section.MoveVid div.holder {
+  position: sticky;
+  top: 109px;
+}
+
+.spacevideo {
+  align: center;
+  display: block;
+  margin: auto;
+  padding: none;
+  height: 85vh;
+  padding-bottom: 15vh;
+  padding-top: 15vh;
+}
+
+
+.fixed{
+  position: fixed;
+  display: block;
+  transform: translateY(-30vh);
+  margin-left: 26%;
+  margin-right: 0;
+  padding-right: 0;
+
+}
+
+.absolute{
+  position: absolute;
+  transform: translate(-36vw, 82vh);
+}
+
+.AboveTxt {
+  z-index: 1;
+  position: sticky;
+}
+
+#chatheader:hover {
+
+}
+
+.employicon {
+  width: 200px;
+  float: left;
+  transform: translateY(-20px);
+  transition: 0.3s;
+}
+
+.box {
+  display: block;
+  background-color: #6065FB;
+  border-radius: 100px 0px 100px 0px;
+  padding: 50px;
+  color: #06020D;
+  font-weight: bold;
+}
+
+.Lemonbox {
+  background-color: #8C64E6;
+}
+
+.Embox {
+  background-color: #BF60FB;
+}
+
+.Maxbox {
+  background-color: #E25CF2;
+}
+
+.ChatBG {
+  background: linear-gradient(to right, #06020D 50%, #8C64E6 50%);
+}
+
+.LemBG {
+  background: linear-gradient(to right, #6065FB 50%, #BF60FB 50%);
+}
+
+.EmBG {
+  background: linear-gradient(to right, #8C64E6 50%, #E25CF2 50%);
+}
+
+.MaxBG {
+  background: linear-gradient(to right, #BF60FB 50%, #06020D 50%);
+}
+
+.DetailsBox {
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.content {
+  padding-left: 5vw;
+}
+
+.employtext {
+  margin-left: 200px;
+}
+
+.arrowbutton {
+  background-color: inherit;
+  border: none;
+  font-family: customfont;
+  color: white;
+  font-size: 50px;
+  margin-left: 49%;
+  padding: 0;
+  transition: 0.4s;
+}
+
+.arrowbutton:hover {
+  font-weight: bold;
+}
+
+.BlackBox {
+  background-color: #06020D;
+  border-radius: 100px 0px 0px 0px;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+}
+
+.BlackBoxBG {
+  background-color: #E25CF2;
+  width: 100%;
+  height: 200px;
+}
+
+.bottom{
+  color: #E8E8E8;
+  font-weight: bolder;
+
+  width: 100%;
+  height: 7%;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: left;
+  text-indent: 75%;
+
+  left: 0;
+  width: 100%;
+
+  position: sticky;
+
+  z-index: 3;
+}

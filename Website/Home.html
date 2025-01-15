@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Third Party Applications</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <title>Home</title>
+<!--    link the stylesheets here-->
+
+  <!--<link rel="stylesheet" href="fonts.css">-->
+  <style>
+  @font-face {
+    font-family: customfont;
+    src: url(3PAlowercasevariant.ttf);
+  }
+  </style>
+
+  <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">-->
+
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<div class="tab" style="padding: 25px">
+  <a href="Home.html"><button class="tablink" style = margin-top:15>Home</button></a>
+  <a href="Projects.html"><button class="tablink" style = margin-top:15>Projects</button></a>
+  <a href="About.html"><button class="tablink" style = margin-top:15>About</button></a>
+</div>
+
+<script>
+
+const VidScroll = () => {
+  var section = document.getElementById("VidSection"); //Get video section
+  var vid = document.getElementById("scrollvideo"); //Get video
+
+  var SectionPos = section.getBoundingClientRect(); //Section the video is in
+  const distance = window.scrollY; //Height of the entire visible screen
+  const TotalDis = SectionPos.height; //Height of the entire section of visible video
+
+  vid.pause(); //Start with video paused
+
+  let VidPlay = true; //Play video when first scrolling down (WIP)
+
+  let percentage = distance / TotalDis;
+  percentage = Math.max(0, percentage);
+  percentage = Math.min(percentage, 1);
+
+  vid.pause();
+  vid.defaultPlaybackRate = 2.0;
+
+  console.log(VidPlay);
+
+  if (0.5 > percentage > 0){
+    //play video once and then stop at end (WIP)
+    if (VidPlay == true){
+      vid.play();
+      VidPlay = false;
+    }
+    else {
+      vid.pause();
+    }
+  }
+  else if (percentage = 0){
+    //Stop video from going until scrolling down again
+    vid.load();
+    vid.currentTime = 0;
+    VidPlay = true;
+  }
+  else {
+    //reset video (WIP)
+    vid.pause();
+    vid.currentTime = 0;
+    VidPlay = false;
+  }
+
+}
+
+window.addEventListener("scroll", VidScroll);
+
+
+
+</script>
+
+<body>
+
+<section id="VidSection" class="VidSection">
+  <div class="headvidholder">
+    <video id="scrollvideo" class="scrollvideo" src="videos/3PA Hat Animation.mp4" muted playsinline></video>
+  </div>
+  <div class="containerhead">
+    <h1 class="pagehead">THIRD PARTY APPLICATIONS</h1>
+    <h2 class="pagesubhead">GAME DEVELOPEMENT</h2>
+  </div>
+</section>
+
+<div class="BlackBoxBG" style="padding-bottom: 40px;">
+  <div class="BlackBox" style="clip-path: ellipse(115vw 50% at right center); height: 415px; position: absolute; transform:translateY(-200px); background-color: #BF60FB">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(110vw 50% at right center); height: 410px; position: absolute; transform:translateY(-210px); background-color: #8C64E6">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(105vw 50% at right center); height: 405px; position: absolute; transform:translateY(-220px); background-color: #6065FB">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(103vw 50.5% at right center); height: 450px; position: absolute; transform:translateY(-280px);">
+  </div>
+</div>
+
+  <aside id="sidebar" class="sidebar">
+    <a href="Projects.html"><img src="images/Final Odyssey Logo Black.svg" width="100%"></img></a>
+    <p class="important" style="text-align:center; padding-bottom:50px; color: #06020D;">Survive the final frontier with this restored classic.</p>
+    <h2 style="color: #06020D;">News</h2>
+    <p style="color: #06020D; font-weight: bold; text-align: left;">First created in the 1980s rush of independent game developers, this basic-code game is now being adapted for modern platforms. Inspired by popular resource-management and space-combat titles, Final Odyssey is a true staple of its time. With the gracious digital donation of its previous developer, Third Party Applications is working to show you a forgotten gem of the past. If you would like to see more updates on the restoration of this project, we invite you to follow our social media at the bottom of the page.</p>
+  </aside>
+
+<section class="MoveVid">
+  <div class="holder">
+    <video id="homevideo" class="homevideo" src="videos/Final Odyssey Sample Video.mp4" autoplay muted loop></video>
+  </div>
+</secion>
+
+<div class="BlackBoxBG" style="padding-top: 20px; transform: translateY(89vh)">
+  <div class="BlackBox" style="clip-path: ellipse(115vw 50% at right center); height: 415px; position: absolute; transform: rotate(180deg); background-color: #BF60FB">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(110vw 50% at right center); height: 410px; position: absolute; transform: translateY(20px) rotate(180deg); background-color: #8C64E6">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(105vw 50% at right center); height: 405px; position: absolute; transform: translateY(40px) rotate(180deg); background-color: #6065FB">
+  </div>
+  <div class="BlackBox" style="clip-path: ellipse(103vw 50.5% at right center); height: 450px; position: absolute; transform: translateY(60px) rotate(180deg);">
+  </div>
+</div>
+
+<div class="container" style="padding-top:75vh; padding-bottom:0;">
+  <h2 style="font-size: 100px;">Our Mission</h2>
+</div>
+
+ <div>
+    <aside class="leftbar">
+      <img src="images/Logo smal.png" width="100%"></img>
+    </aside>
+
+    <section class="mission">
+        <p class="important mistext" style="font-weight: normal; line-height: 1;">At Third Party Applications, we push the boundaries of game development to unite forgotten media with the modern age. As an independent collective passionate about creativity, code, and history, we work to ensure no project of the past will be lost to time.</p>
+        <a href="About.html"><button class="misbutt">MORE ABOUT US</button></a>
+    </section>
+  </div>
+
+</body>
+
+<div class="bottom">
+  <button class="tablink2"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
+  <button class="tablink2"><a href="https://www.tiktok.com/@thirdpartyapplications?is_from_webapp=1&sender_device=pc"><img src="images/Tiktok.png" width="70" height="70"></img></a></button>
+  <button class="tablink2"><a href="https://youtube.com/@ThirdPartyApplications"><img src="images/Youtube.png" width="70" height="70"></img></a></button>
+  <button class="tablink2"><a href="https://www.reddit.com/r/3rdpartyApplications/"><img src="images/Reddit.png" width="70" height="70"></img></a></button>
+</div>
+
+</html>
