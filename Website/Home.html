@@ -38,54 +38,28 @@
 <script>
 
 const VidScroll = () => {
-  var section = document.getElementById("VidSection"); //Get video section
-  var vid = document.getElementById("scrollvideo"); //Get video
+  var section = document.getElementById("VidSection");
+  var vid = document.getElementById("scrollvideo");
 
-  var SectionPos = section.getBoundingClientRect(); //Section the video is in
-  const distance = window.scrollY; //Height of the entire visible screen
-  const TotalDis = SectionPos.height; //Height of the entire section of visible video
+  var SectionPos = section.getBoundingClientRect();
+  const distance = window.scrollY;
+  const TotalDis = SectionPos.height / 1.5;
 
-  vid.pause(); //Start with video paused
-
-  let VidPlay = true; //Play video when first scrolling down (WIP)
+  vid.pause();
 
   let percentage = distance / TotalDis;
   percentage = Math.max(0, percentage);
   percentage = Math.min(percentage, 1);
 
-  vid.pause();
-  vid.defaultPlaybackRate = 2.0;
+  console.log(percentage);
 
-  console.log(VidPlay);
-
-  if (0.5 > percentage > 0){
-    //play video once and then stop at end (WIP)
-    if (VidPlay == true){
-      vid.play();
-      VidPlay = false;
-    }
-    else {
-      vid.pause();
-    }
-  }
-  else if (percentage = 0){
-    //Stop video from going until scrolling down again
-    vid.load();
-    vid.currentTime = 0;
-    VidPlay = true;
-  }
-  else {
-    //reset video (WIP)
-    vid.pause();
-    vid.currentTime = 0;
-    VidPlay = false;
+  if (vid.duration > 0){
+    vid.currentTime = vid.duration * percentage;
   }
 
 }
 
 window.addEventListener("scroll", VidScroll);
-
-
 
 </script>
 
