@@ -1,3 +1,5 @@
+/* APPLIES TO ALL WEBPAGES */
+/* The default background and text */
 body {
     margin: 0 auto;
     height: 100%;
@@ -8,6 +10,7 @@ body {
     color: #E8E8E8;
 }
 
+/* The actual video of the animated page logo. */
 .scrollvideo {
   width: 40%;
   float: left;
@@ -15,12 +18,14 @@ body {
   padding: 50px 0px;
 }
 
+/* Section that containers the header text. */
 .containerhead{
   width: 90%;
   margin-top: 50px;
   padding: 50px 50px;
 }
 
+/* Page header. */
 .pagehead{
   text-align: left;
   position: absolute;
@@ -29,6 +34,7 @@ body {
   margin-top: 15vh;
 }
 
+/* Page subheader. */
 .pagesubhead{
   text-align: left;
   position: absolute;
@@ -36,23 +42,8 @@ body {
   margin-top: 47vh;
 }
 
-.container{
-  width: 90%;
-  margin: 0 auto;
-  padding: 50px 0;
 
-  display: flex;
-  flex-direction: column;
-}
-
-.section {
-  margin: 0 auto;
-  width: 750px;
-  padding: 50px 0;
-  text-align: center;
-
-}
-
+/* Default heading. */
 h1 {
   color: #E8E8E8;
   font-size: 100px;
@@ -60,6 +51,7 @@ h1 {
   margin-top: 30px;
 }
 
+/* Default subheading. */
 h2 {
   color: #E8E8E8;
   font-size: 75px;
@@ -70,6 +62,7 @@ h2 {
   margin-bottom: 5px;
 }
 
+/* Default small text. */
 p {
   padding-left: 50px;
   margin-right: 50px;
@@ -78,12 +71,14 @@ p {
   text-align: justify;
 }
 
+/* If small text needs to have a little more 'umph'. */
 .important{
   color: #E8E8E8;
   font-weight: bold;
   font-size: 40px;
 }
 
+/* Header area in which the buttons are held */
 .tab{
   background-color: #06020D;
   font-weight: bolder;
@@ -114,6 +109,7 @@ p {
   border-color: #06020D;
 }
 
+/* Each individual button on the header */
 .tablink {
   font-family: customfont;
   background-color: inherit;
@@ -126,6 +122,7 @@ p {
   font-size: 20px;
 }
 
+/* Effects done on the tablink when hovered over */
 .tablink:hover {
 	font-weight: bold;
 	font-size: 22px;
@@ -133,6 +130,7 @@ p {
 	background-size: 100%;
 }
 
+/* Footer buttons */
 .tablink2 {
   border: none;
   cursor: pointer;
@@ -143,21 +141,19 @@ p {
 	border-radius: 20px;
 }
 
+/* Effects done on the buttons in the footer */
 .tablink2:hover {
   transform: scale(1.25);
 }
 
-
-.show {
-  display: block;
-}
-
-
+/* Links will not be shown as having special colors or an underline, so that way they blend into any buttons */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* HOMEPAGE */
+/* The content along the left on the moving video on the home page. Seperates the content on the left from the video content. */
 .sidebar {
   text-align: left;
   padding-top: 10px;
@@ -167,6 +163,7 @@ a {
   background-color: #E25CF2;
 }
 
+/* The hat on the bottom of the Home page is seperated into a slightly different side bar, as seen below. */
 .leftbar {
   text-align: left;
   box-sizing: border-box;
@@ -176,16 +173,20 @@ a {
   padding-left: 50px;
 }
 
+/* The text on the right on the bottom of the homepage, the summary of the mission of the company. */
 .mission{
   width: 60%;
   float: right;
   margin-bottom: 20vh;
 }
 
+/* Text within the mission section. */
 .mistext{
   padding-left: 0px;
   margin-left: 0;
 }
+
+/* The More About Us button at the bottom of the page. */
  .misbutt {
    font-family: customfont;
    font-size: 60px;
@@ -206,11 +207,14 @@ a {
    transition: 0.5s;
  }
 
+/* What happens to the More About Us button when hovered over (expands) */
  .misbutt:hover {
    background-color: #E25CF2;
    width: 44%;
  }
 
+/* PROJECTS PAGE IS BELOW */
+/* Final Odessy game title */
  .GameTitle {
    font-size: 95px;
    padding-top: 75px;
@@ -218,6 +222,7 @@ a {
    color: white;
  }
 
+/* The side section in the Final Odessy bottom section */
 .spaceside {
   text-align: left;
   width: 40%;
@@ -227,8 +232,9 @@ a {
   margin-top: 0px;
 }
 
+/* Gonna be honest, no idea how this works but it makes the side section not get fucked up. */
 .SpaceTab {
-  background-color: #E25CF2;
+  background-color: green;
   height: 150px;
   max-height: 150px;
   padding-top: 40px;
@@ -236,6 +242,7 @@ a {
   margin-right: 0;
 }
 
+/* The section for the images lined alone the left. */
 .gamestats{
   box-sizing: border-box;
   float: left;
@@ -246,12 +253,14 @@ a {
   padding-left: 60px;
 }
 
+/* The actual images lined along the left. */
 .statimg{
   padding-top: 0px;
   margin-top: 0px;
   width: 110px;
 }
 
+/* Title of each game stat along the left. */
 .stattitle {
   font-size: 50px;
   font-weight: bold;
@@ -259,6 +268,7 @@ a {
   margin: 10px;
 }
 
+/* The subtitle of each game stat along the left. */
 .stattext {
   font-size: 45px;
   text-align: left;
@@ -267,18 +277,14 @@ a {
   line-height: 0.7;
 }
 
-
-.spacestory{
-  margin: 0px;
-  right: 0;
-}
-
+/* Top pink segment on left in Final Odessey section. */
 .StoryTab {
   background-color: #E25CF2;
   height: 250px;
   margin: 0px;
 }
 
+/* The actual text of the Final Odessey story. */
 .storytext{
   font-size: 30px;
   font-weight: bold;
@@ -286,36 +292,14 @@ a {
   padding: 50px;
 }
 
-button {
-  style: none;
-  background-color: none;
-}
-
+/* The section of detection for the top logo animation. */
 .VidSection {
   height: 100vh;
   margin-top: 60px;
   margin-bottom: 200px;
 }
 
-.homevideo {
-  width: 73%;
-  padding-left: 2px;
-  position: static;
-
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.MoveVid {
-  height: 175vh;
-  background-color: #E25CF2;
-}
-
-section.MoveVid div.holder {
-  position: sticky;
-  top: 109px;
-}
-
+/* The Final Odessey 'behind the scenes' placeholder video. */
 .spacevideo {
   align: center;
   display: block;
@@ -327,30 +311,37 @@ section.MoveVid div.holder {
 }
 
 
-.fixed{
-  position: fixed;
-  display: block;
-  transform: translateY(-30vh);
-  margin-left: 26%;
-  margin-right: 0;
-  padding-right: 0;
+/* BACK TO HOME PAGE. */
+/* Video of Final Odessey on the Home page. */
+.homevideo {
+  width: 73%;
+  padding-left: 2px;
+  position: static;
 
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.absolute{
-  position: absolute;
-  transform: translate(-36vw, 82vh);
+/* The height available for the video to move. */
+.MoveVid {
+  height: 175vh;
+  background-color: #E25CF2;
 }
 
+/* Basically makes it so the actual video moves. */
+section.MoveVid div.holder {
+  position: sticky;
+  top: 109px;
+}
+
+/* Sometimes things overlap text that aren't supposed to. This puts the text on top. Currently being used on the Restoration Initiative description. */
 .AboveTxt {
   z-index: 1;
   position: sticky;
 }
 
-#chatheader:hover {
-
-}
-
+/* ABOUT PAGE BELOW */
+/* The small images that are on the left of each box in the about page */
 .employicon {
   width: 200px;
   float: left;
@@ -358,6 +349,7 @@ section.MoveVid div.holder {
   transition: 0.3s;
 }
 
+/* The format for each box in the about page */
 .box {
   display: block;
   background-color: #6065FB;
@@ -367,6 +359,7 @@ section.MoveVid div.holder {
   font-weight: bold;
 }
 
+/* The box color sections are just the change of colors of the previous boxes */
 .Lemonbox {
   background-color: #8C64E6;
 }
@@ -375,10 +368,8 @@ section.MoveVid div.holder {
   background-color: #BF60FB;
 }
 
-.Maxbox {
-  background-color: #E25CF2;
-}
 
+/* The following background sections create the flow affect for the about boxes */
 .ChatBG {
   background: linear-gradient(to right, #06020D 50%, #8C64E6 50%);
 }
@@ -391,23 +382,23 @@ section.MoveVid div.holder {
   background: linear-gradient(to right, #8C64E6 50%, #E25CF2 50%);
 }
 
-.MaxBG {
-  background: linear-gradient(to right, #BF60FB 50%, #06020D 50%);
-}
-
+/* This is the container for the written information in the dropdown section */
 .DetailsBox {
   overflow: hidden;
   transition: 0.3s;
 }
 
+/* The top section of each employee box including description, text, and title */
 .content {
   padding-left: 5vw;
 }
 
+/* ALL of the employee text, including hiddent text */
 .employtext {
   margin-left: 200px;
 }
 
+/* The arrow button that appears when a box is hovered over */
 .arrowbutton {
   background-color: inherit;
   border: none;
@@ -419,10 +410,13 @@ section.MoveVid div.holder {
   transition: 0.4s;
 }
 
+/* The arrow then bolds whenever you hover directly over it */
 .arrowbutton:hover {
   font-weight: bold;
 }
 
+/* FOR THE VISUALS ON ALL PAGES */
+/* The half-circles used for the curves. */
 .BlackBox {
   background-color: #06020D;
   border-radius: 100px 0px 0px 0px;
@@ -431,12 +425,15 @@ section.MoveVid div.holder {
   z-index: 0;
 }
 
+/* Background fill-in color around the shapes to create curve illusion. */
 .BlackBoxBG {
   background-color: #E25CF2;
   width: 100%;
   height: 200px;
 }
 
+/* ALL PAGES */
+/* The footer */
 .bottom{
   color: #E8E8E8;
   font-weight: bolder;
