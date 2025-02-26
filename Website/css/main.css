@@ -5,9 +5,9 @@ body {
     height: 100%;
   	text-align: justify;
     font-family: customfont;
-    background-color: #06020D;
+    background-color: #EAD6D9;
     text-align: center;
-    color: #E8E8E8;
+    color: #785A73;
 }
 
 /* The actual video of the animated page logo. */
@@ -45,7 +45,6 @@ body {
 
 /* Default heading. */
 h1 {
-  color: #E8E8E8;
   font-size: 100px;
   font-weight: lighter;
   margin-top: 30px;
@@ -53,7 +52,6 @@ h1 {
 
 /* Default subheading. */
 h2 {
-  color: #E8E8E8;
   font-size: 75px;
 
   font-weight: lighter;
@@ -73,14 +71,13 @@ p {
 
 /* If small text needs to have a little more 'umph'. */
 .important{
-  color: #E8E8E8;
   font-weight: bold;
   font-size: 40px;
 }
 
 /* Header area in which the buttons are held */
 .tab{
-  background-color: #06020D;
+  background-color: #EAEAEC;
   font-weight: bolder;
 
   top: 0;
@@ -97,23 +94,19 @@ p {
   position: fixed;
   z-index: 5;
   bottom: 0;
-  width: 97%;
-  height: 7%;
+  width: 100%;
+  height: 5%;
 
   overflow: hidden;
 
-  border: #333333 thick solid;
-  border-width: 10px;
   border-radius: 0px 0px 25px 25px;
-  border-style: none none solid none;
-  border-color: #06020D;
 }
 
 /* Each individual button on the header */
 .tablink {
   font-family: customfont;
   background-color: inherit;
-  color: #E8E8E8;
+  color: #785A73;
   float: left;
   border: none;
   cursor: pointer;
@@ -130,22 +123,6 @@ p {
 	background-size: 100%;
 }
 
-/* Footer buttons */
-.tablink2 {
-  border: none;
-  cursor: pointer;
-	margin-left: 0;
-  transition: 0.3s;
-	background-color: rgba(0,0,0,0);
-
-	border-radius: 20px;
-}
-
-/* Effects done on the buttons in the footer */
-.tablink2:hover {
-  transform: scale(1.25);
-}
-
 /* Links will not be shown as having special colors or an underline, so that way they blend into any buttons */
 a {
   text-decoration: none;
@@ -160,7 +137,7 @@ a {
   width: 25%;
   box-sizing: border-box;
   float: left;
-  background-color: #E25CF2;
+  background-color: #8F718A;
 }
 
 /* The hat on the bottom of the Home page is seperated into a slightly different side bar, as seen below. */
@@ -190,8 +167,8 @@ a {
  .misbutt {
    font-family: customfont;
    font-size: 60px;
-   background-color:#6065FB;
-   color: #E8E8E8;
+   background-color:#F5B765;
+   color: #785A73;
    float:left;
    height: 80px;
    overflow: hidden;
@@ -209,7 +186,7 @@ a {
 
 /* What happens to the More About Us button when hovered over (expands) */
  .misbutt:hover {
-   background-color: #E25CF2;
+   background-color: #8F718A;
    width: 44%;
  }
 
@@ -279,7 +256,7 @@ a {
 
 /* Top pink segment on left in Final Odessey section. */
 .StoryTab {
-  background-color: #E25CF2;
+  background-color: #8F718A;
   height: 250px;
   margin: 0px;
 }
@@ -325,7 +302,7 @@ a {
 /* The height available for the video to move. */
 .MoveVid {
   height: 175vh;
-  background-color: #E25CF2;
+  background-color: #8F718A;
 }
 
 /* Basically makes it so the actual video moves. */
@@ -352,34 +329,34 @@ section.MoveVid div.holder {
 /* The format for each box in the about page */
 .box {
   display: block;
-  background-color: #6065FB;
+  background-color: #F5B765;
   border-radius: 100px 0px 100px 0px;
   padding: 50px;
-  color: #06020D;
+  color: #EAD6D9;
   font-weight: bold;
 }
 
 /* The box color sections are just the change of colors of the previous boxes */
 .Lemonbox {
-  background-color: #8C64E6;
+  background-color: #EE9F75;
 }
 
 .Embox {
-  background-color: #BF60FB;
+  background-color: #E88985;
 }
 
 
 /* The following background sections create the flow affect for the about boxes */
 .ChatBG {
-  background: linear-gradient(to right, #06020D 50%, #8C64E6 50%);
+  background: linear-gradient(to right, #EAD6D9 50%, #EE9F75 50%);
 }
 
 .LemBG {
-  background: linear-gradient(to right, #6065FB 50%, #BF60FB 50%);
+  background: linear-gradient(to right, #F5B765 50%, #E88985 50%);
 }
 
 .EmBG {
-  background: linear-gradient(to right, #8C64E6 50%, #E25CF2 50%);
+  background: linear-gradient(to right, #EE9F75 50%, #EAD6D9 50%);
 }
 
 /* This is the container for the written information in the dropdown section */
@@ -396,6 +373,7 @@ section.MoveVid div.holder {
 /* ALL of the employee text, including hiddent text */
 .employtext {
   margin-left: 200px;
+  color: #785A73;
 }
 
 /* The arrow button that appears when a box is hovered over */
@@ -418,7 +396,7 @@ section.MoveVid div.holder {
 /* FOR THE VISUALS ON ALL PAGES */
 /* The half-circles used for the curves. */
 .BlackBox {
-  background-color: #06020D;
+  background-color: #EAD6D9;
   border-radius: 100px 0px 0px 0px;
   width: 100%;
   height: 200px;
@@ -427,7 +405,7 @@ section.MoveVid div.holder {
 
 /* Background fill-in color around the shapes to create curve illusion. */
 .BlackBoxBG {
-  background-color: #E25CF2;
+  background-color: #8F718A;
   width: 100%;
   height: 200px;
 }
@@ -435,14 +413,14 @@ section.MoveVid div.holder {
 /* ALL PAGES */
 /* The footer */
 .bottom{
-  color: #E8E8E8;
+  background-color: #EAEAEC;
   font-weight: bolder;
 
   width: 100%;
-  height: 7%;
+  height: 5%;
 
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: left;
   text-indent: 75%;
 
@@ -452,4 +430,23 @@ section.MoveVid div.holder {
   position: sticky;
 
   z-index: 3;
+  overflow: hidden;
+
+  border-radius: 25px 25px 0px 0px;
+}
+
+/* Footer buttons */
+.tablink2 {
+  border: none;
+  cursor: pointer;
+	margin-left: 0;
+  transition: 0.3s;
+	background-color: rgba(0,0,0,0);
+
+	border-radius: 20px;
+}
+
+/* Effects done on the buttons in the footer */
+.tablink2:hover {
+  transform: scale(1.25);
 }
