@@ -129,6 +129,20 @@ a {
   color: inherit;
 }
 
+/*iconbox for boxes*/
+.iconbox {
+  background-color: #EAEAEC;
+  transform: translateY(-10px) translateX(-10px);
+  border-radius: 100px;
+}
+
+.shadowbox {
+  background-color: #785A73;
+  transform: translateY(10px) translateX(10px);
+  border-radius: 100px;
+}
+
+
 /* HOMEPAGE */
 /* The content along the left on the moving video on the home page. Seperates the content on the left from the video content. */
 .sidebar {
