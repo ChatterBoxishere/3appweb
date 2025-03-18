@@ -10,6 +10,23 @@ body {
     color: #785A73;
 }
 
+/*Creates a circle shape that is used in the curve effect.*/
+.circlecut {
+  clip-path: ellipse(54vw 75px);
+  background-color: green;
+  width: 100%;
+  height: 240px;
+  position: absolute
+}
+
+/*Fills in the space below or above the circles to join it to the main body of color.*/
+.circleBG {
+  background-color: #8F718A;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
 /* The actual video of the animated page logo. */
 .scrollvideo {
   width: 40%;
@@ -121,6 +138,7 @@ p {
 	font-size: 22px;
 	background-clip: text;
 	background-size: 100%;
+  text-shadow: 1px 1px #785A73;
 }
 
 /* Links will not be shown as having special colors or an underline, so that way they blend into any buttons */
@@ -129,19 +147,40 @@ a {
   color: inherit;
 }
 
-/*iconbox for boxes*/
+/*white for boxes with drop shadows*/
 .iconbox {
   background-color: #EAEAEC;
   transform: translateY(-10px) translateX(-10px);
   border-radius: 100px;
+
+  transition: 0.2s;
 }
 
+/*dropshadow for white boxes*/
 .shadowbox {
   background-color: #785A73;
   transform: translateY(10px) translateX(10px);
   border-radius: 100px;
 }
 
+/*white box for inset effect*/
+.InnieIconbox {
+  background-color: #EAEAEC;
+  transform: translateY(-8px) scale(0.98) scaleY(0.95);
+  border-radius: 100px;
+}
+
+/*shadow frame for inset effect*/
+.InnieShadowbox {
+  background-color: #785A73;
+  transform: translateY(8px) scale(1.01) scaleY(1.02);
+  border-radius: 100px;
+}
+
+/*For when buttons are made out of white boxes to create the button effect*/
+.iconbutton:hover {
+    transform: translateY(-7px) translateX(-7px);
+}
 
 /* HOMEPAGE */
 /* The content along the left on the moving video on the home page. Seperates the content on the left from the video content. */
@@ -166,24 +205,18 @@ a {
 
 /* The text on the right on the bottom of the homepage, the summary of the mission of the company. */
 .mission{
-  width: 60%;
-  float: right;
-  margin-bottom: 20vh;
+  margin-bottom: 50px;
+  margin-left: 125px;
+  margin-right: 125px;
 }
 
 /* Text within the mission section. */
-.mistext{
-  padding-left: 0px;
-  margin-left: 0;
-}
-
 /* The More About Us button at the bottom of the page. */
  .misbutt {
    font-family: customfont;
    font-size: 60px;
    background-color:#F5B765;
    color: #785A73;
-   float:left;
    height: 80px;
    overflow: hidden;
    white-space: nowrap;
@@ -196,6 +229,8 @@ a {
 
    cursor: pointer;
    transition: 0.5s;
+
+   margin: 100px;
  }
 
 /* What happens to the More About Us button when hovered over (expands) */
@@ -206,11 +241,15 @@ a {
 
 /* PROJECTS PAGE IS BELOW */
 /* Final Odessy game title */
+.FakeButton {
+  height: 65px;
+  padding: 5px;
+  float: right;
+}
+
  .GameTitle {
-   font-size: 95px;
-   padding-top: 75px;
-   margin-top: 0px;
-   color: white;
+   font-size: 105px;
+   height: 100vh;
  }
 
 /* The side section in the Final Odessy bottom section */
@@ -223,49 +262,83 @@ a {
   margin-top: 0px;
 }
 
-/* Gonna be honest, no idea how this works but it makes the side section not get fucked up. */
-.SpaceTab {
-  background-color: green;
-  height: 150px;
-  max-height: 150px;
-  padding-top: 40px;
-  overflow: hidden;
-  margin-right: 0;
-}
-
-/* The section for the images lined alone the left. */
-.gamestats{
-  box-sizing: border-box;
+/*The Final Odessey Sprite that moves with the floating items*/
+.SpriteImg {
   float: left;
-  width: 35%;
-  background-color: inherit;
-  margin: 0;
-  padding: 0px;
-  padding-left: 60px;
+  left: 0;
+  position: absolute;
+  z-index: 3;
+  margin-top: 50px;
+  transform: translateX(8.5vw);
 }
 
-/* The actual images lined along the left. */
-.statimg{
+.SpritePath {
+  width: 78vw;
+}
+
+.SpritePathBG {
+  width: 78vw;
+  margin-top: 75px;
+  float: left;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+  margin-left: 11vw;
+  overflow: hidden;
+}
+
+/*creates the effect of them being alongside each other more easily. */
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.MoveStats {
+  height: 175vh;
+}
+
+section.MoveStats div.holder {
+  position: sticky;
+  top: 31vh;
+}
+
+/* The colored boxes each stat is in */
+.StatBox {
+  display: block;
+  background-color: #F5B765;
+  border-radius: 100px 0px 0px 0px;
+  padding: 50px;
+  height: 55vh;
+  z-index: 1;
+}
+
+/* The white boxes lined along the top */
+.StatImg{
   padding-top: 0px;
   margin-top: 0px;
   width: 110px;
+  padding-bottom: 30px;
 }
 
-/* Title of each game stat along the left. */
-.stattitle {
+/* Title of each game stat along the top. */
+.StatTitle {
   font-size: 50px;
   font-weight: bold;
   padding: 0px;
-  margin: 10px;
+  margin: 0px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-/* The subtitle of each game stat along the left. */
-.stattext {
+/* The subtitle of each game stat below the title. */
+.StatText {
   font-size: 45px;
-  text-align: left;
   padding: 0px;
   margin: 0px;
   line-height: 0.7;
+  text-align: center;
 }
 
 /* Top pink segment on left in Final Odessey section. */
@@ -297,15 +370,15 @@ a {
   margin: auto;
   padding: none;
   height: 85vh;
-  padding-bottom: 15vh;
-  padding-top: 15vh;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
 }
 
 
 /* BACK TO HOME PAGE. */
 /* Video of Final Odessey on the Home page. */
 .homevideo {
-  width: 73%;
+  height: 85vh;
   padding-left: 2px;
   position: static;
 
@@ -322,7 +395,8 @@ a {
 /* Basically makes it so the actual video moves. */
 section.MoveVid div.holder {
   position: sticky;
-  top: 109px;
+  top: 95px;
+  margin-left: 25vw;
 }
 
 /* Sometimes things overlap text that aren't supposed to. This puts the text on top. Currently being used on the Restoration Initiative description. */
@@ -334,10 +408,18 @@ section.MoveVid div.holder {
 /* ABOUT PAGE BELOW */
 /* The small images that are on the left of each box in the about page */
 .employicon {
-  width: 200px;
+  width: 300px;
   float: left;
   transform: translateY(-20px);
   transition: 0.3s;
+}
+
+.employshadow {
+  width: 300px;
+  float: left;
+  transform: translateY(-20px) translateX(-802.5px);
+  transition: 0.3s;
+  position: absolute;
 }
 
 /* The format for each box in the about page */
@@ -386,7 +468,7 @@ section.MoveVid div.holder {
 
 /* ALL of the employee text, including hiddent text */
 .employtext {
-  margin-left: 200px;
+  margin-left: 300px;
   color: #785A73;
 }
 
@@ -399,6 +481,7 @@ section.MoveVid div.holder {
   font-size: 50px;
   margin-left: 49%;
   padding: 0;
+  padding-top: 25px;
   transition: 0.4s;
 }
 
@@ -407,8 +490,7 @@ section.MoveVid div.holder {
   font-weight: bold;
 }
 
-/* FOR THE VISUALS ON ALL PAGES */
-/* The half-circles used for the curves. */
+/* These are for the boxes on the about page */
 .BlackBox {
   background-color: #EAD6D9;
   border-radius: 100px 0px 0px 0px;
@@ -417,7 +499,7 @@ section.MoveVid div.holder {
   z-index: 0;
 }
 
-/* Background fill-in color around the shapes to create curve illusion. */
+/* Background fill-in color around the shapes to create curve illusion on the employee boxes */
 .BlackBoxBG {
   background-color: #8F718A;
   width: 100%;
@@ -454,7 +536,7 @@ section.MoveVid div.holder {
   border: none;
   cursor: pointer;
 	margin-left: 0;
-  transition: 0.3s;
+  transition: 0.2s;
 	background-color: rgba(0,0,0,0);
 
 	border-radius: 20px;
@@ -463,4 +545,5 @@ section.MoveVid div.holder {
 /* Effects done on the buttons in the footer */
 .tablink2:hover {
   transform: scale(1.25);
+  filter: drop-shadow(4px 4px #785A73);
 }
