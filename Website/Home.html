@@ -43,9 +43,22 @@ function AdjustVid() {
   var HeightTrue = SidebarHeight.getBoundingClientRect().height;
 
   document.getElementById("VidHeight").style.height = HeightTrue + "px";
+}
 
-  console.log(document.getElementById("VidHeight").style.height);
-  console.log(HeightTrue);
+function PresentOpen() {
+  let Lid = document.getElementById("Lid");
+  let More = document.getElementById("misbutt");
+
+  Lid.style.transform = "translateY(-45%) translateX(5%) rotate(10deg)";
+  More.style.zIndex = "1";
+}
+
+function PresentClose() {
+  let Lid = document.getElementById("Lid");
+  let More = document.getElementById("misbutt");
+
+  Lid.style.transform = "";
+  More.style.zIndex = "-1";
 }
 
 const VidScroll = () => {
@@ -125,22 +138,32 @@ window.addEventListener("scroll", VidScroll);
 
 <div style="margin-bottom: 50vh;"></div>
 
-<div class="container" style="padding-top:75vh; padding-bottom:0;">
-  <h2 style="font-size: 100px;">Our Mission</h2>
+<div class="container" style="padding-top:20vh; padding-bottom:0;">
 </div>
 
- <div>
+ <div class="MissButton" id="MissButton" onmouseover="PresentOpen()" onmouseout="PresentClose()" style="margin-bottom: 10vh;">
+
+
+   <ul style="position: absolute; margin-left: 8vw; margin-right: 8vw; transform: translateY(-50%)">
+     <img src="images/Yellow Present.png" width="25%" style="rotate: -15deg">
+     <section width="25%" style="transform: translateY(-10%)">
+       <img id="Lid" src="images/Purple Present Lid.png" width="50%" style="transition: 0.2s;">
+       <a href="About.html" class="MisLink"><button class="misbutt" id="misbutt">MORE</button></a>
+       <img src="images/Purple Present.png" width= "50%">
+     </section>
+     <img src="images/Orange Present.png" width="25%" style="rotate: 15deg">
+   </ul>
 
     <div class="mission">
       <div class="shadowbox">
         <div class="iconbox">
           <div style="padding: 25px;">
+            <h2 style="font-size: 100px; padding top: 25px;">Our Mission</h2>
             <p class="important mistext" style="font-weight: normal; line-height: 1;">At Third Party Applications, we push the boundaries of game development to unite forgotten media with the modern age. As an independent collective passionate about creativity, code, and history, we work to ensure no project of the past will be lost to time.</p>
           </div>
         </div>
       </div>
     </div>
-    <a href="About.html"><button class="misbutt">MORE ABOUT US</button></a>
   </div>
 
 </body>

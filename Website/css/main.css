@@ -215,28 +215,30 @@ a {
  .misbutt {
    font-family: customfont;
    font-size: 60px;
-   background-color:#F5B765;
    color: #785A73;
-   height: 80px;
-   overflow: hidden;
-   white-space: nowrap;
-   width: 18.15%;
-
-
+   background-color: inherit;
    border: none;
-   border-radius: 3px;
-   padding: 20px;
+
+   z-index: -1;
+
+   display: block;
+   align-items: center;
+   width: 100%;
+
+   transform: translateY(-100%);
+   position: absolute;
 
    cursor: pointer;
-   transition: 0.5s;
-
-   margin: 100px;
+   transition: 0.2s;
  }
 
 /* What happens to the More About Us button when hovered over (expands) */
  .misbutt:hover {
-   background-color: #8F718A;
-   width: 44%;
+
+ }
+
+ a.MisLink:hover button.misbutt {
+   font-size: 65px;
  }
 
 /* PROJECTS PAGE IS BELOW */
@@ -378,7 +380,7 @@ section.MoveStats div.holder {
 /* BACK TO HOME PAGE. */
 /* Video of Final Odessey on the Home page. */
 .homevideo {
-  height: 85vh;
+  width: 70vw;
   padding-left: 2px;
   position: static;
 
@@ -395,7 +397,7 @@ section.MoveStats div.holder {
 /* Basically makes it so the actual video moves. */
 section.MoveVid div.holder {
   position: sticky;
-  top: 95px;
+  top: 15vh;
   margin-left: 25vw;
 }
 
