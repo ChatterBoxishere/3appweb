@@ -31,6 +31,10 @@ function Expand(id) {
   const EmArrow = document.getElementById("EmArrow");
   const MaxArrow = document.getElementById("MaxArrow");
 
+  const Chat = document.getElementById("Chat");
+  const Lem = document.getElementById("Lem");
+  const Em = document.getElementById("Em");
+
   const ChatIcon = document.getElementById("ChatIcon");
   const LemIcon = document.getElementById("LemIcon");
   const EmIcon = document.getElementById("EmIcon");
@@ -45,17 +49,18 @@ function Expand(id) {
     {
       Chats.style.height = "240px";
       ChatArrow.style.transform = "rotate(180deg)";
-      ChatIcon.style.transform = "translateY(175px)";
-      ChatShadow.style.transform = "translateY(175px) translateX(-802.5px)";
+      Chat.style.transform = "translateY(175px)";
       ChatShadow.style.opacity = "0";
+      ChatIcon.style.opacity = "1";
+
     }
     else
     {
       Chats.style.height = "0px";
       ChatArrow.style.transform = "rotate(0deg)";
-      ChatIcon.style.transform = "translateY(-20px)";
-      ChatShadow.style.transform = "translateY(-20px) translateX(-802.5px)";
+      Chat.style.transform = "translateY(-20px)";
       ChatShadow.style.opacity = "1";
+      ChatIcon.style.opacity = "0";
     }
   }
   else if (id == "LemDetails") {
@@ -63,17 +68,17 @@ function Expand(id) {
     {
       Lems.style.height = "190px";
       LemArrow.style.transform = "rotate(180deg)";
-      LemIcon.style.transform = "translateY(180px)";
-      LemShadow.style.transform = "translateY(180px) translateX(-802.5px)";
+      Lem.style.transform = "translateY(180px)";
       LemShadow.style.opacity = "0";
+      LemIcon.style.opacity = "1";
     }
     else
     {
       Lems.style.height = "0px";
       LemArrow.style.transform = "rotate(0deg)";
-      LemIcon.style.transform = "translateY(-25px)";
-      LemShadow.style.transform = "translateY(-25px) translateX(-802.5px)";
+      Lem.style.transform = "translateY(-25px)";
       LemShadow.style.opacity = "1";
+      LemIcon.style.opacity = "0";
     }
   }
   else if (id == "EmDetails") {
@@ -81,17 +86,17 @@ function Expand(id) {
     {
       Ems.style.height = "220px";
       EmArrow.style.transform = "rotate(180deg)";
-      EmIcon.style.transform = "translateY(175px)";
-      EmShadow.style.transform = "translateY(175px) translateX(-802.5px)";
+      Em.style.transform = "translateY(175px)";
       EmShadow.style.opacity = "0";
+      EmIcon.style.opacity = "1";
     }
     else
     {
       Ems.style.height = "0px";
       EmArrow.style.transform = "rotate(0deg)";
-      EmIcon.style.transform = "translateY(-20px)";
-      EmShadow.style.transform = "translateY(-20px) translateX(-802.5px)";
+      Em.style.transform = "translateY(-20px)";
       EmShadow.style.opacity = "1";
+      EmIcon.style.opacity = "0";
     }
   }
   else if (id == "MaxDetails") {
@@ -236,9 +241,9 @@ window.addEventListener("scroll", VidScroll);
       <div class="ChatBG">
         <div class="Chatbox box" onmouseover="DropDownArrow('ChatArrow')" onmouseout="DropDownArrow('None')">
           <div class="content chat" id="chatheader">
-            <div>
-              <img src="images/Chatter Icon.png" class="employicon" id="ChatIcon"></img>
+            <div id="Chat" class="employ">
               <img src="images/Chatter Icon Blank.png" class="employshadow" id="ChatShadow"></img>
+              <img src="images/Chatter Icon.png" class="employicon" id="ChatIcon"></img>
             </div>
             <div onclick="Expand('ChatDetails');" class="employtext" id="ChatText">
               <div class="shadowbox">
@@ -261,8 +266,10 @@ window.addEventListener("scroll", VidScroll);
       <div class="LemBG">
         <div class="Lemonbox box" onmouseover="DropDownArrow('LemArrow')" onmouseout="DropDownArrow('None')">
           <div class="content lem" id="lemheader">
-            <img src="images/Terran Icon.png" class="employicon" id="LemIcon"></img>
-            <img src="images/Terran Icon Blank.png" class="employshadow" id="LemShadow"></img>
+            <div id="Lem" class="employ">
+              <img src="images/Terran Icon.png" class="employicon" id="LemIcon"></img>
+              <img src="images/Terran Icon Blank.png" class="employshadow" id="LemShadow"></img>
+            </div>
             <div onclick="Expand('LemDetails');" class="employtext" id="LemText">
               <div class="shadowbox">
                 <div class="iconbox">
@@ -286,8 +293,10 @@ window.addEventListener("scroll", VidScroll);
       <div class="EmBG">
         <div class="Embox box" onmouseover="DropDownArrow('EmArrow')" onmouseout="DropDownArrow('None')">
           <div class="content em" id="emheader">
-            <img src="images/Em Icon.png" class="employicon" id="EmIcon"></img>
-            <img src="images/Em Icon Blank.png" class="employshadow" id="EmShadow"></img>
+            <div id="Em" class="employ">
+              <img src="images/Em Icon.png" class="employicon" id="EmIcon"></img>
+              <img src="images/Em Icon Blank.png" class="employshadow" id="EmShadow"></img>
+            </div>
             <div onclick="Expand('EmDetails');" class="employtext" id="EmText">
               <div class="shadowbox">
                 <div class="iconbox">

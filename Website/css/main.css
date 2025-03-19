@@ -411,17 +411,24 @@ section.MoveVid div.holder {
 /* The small images that are on the left of each box in the about page */
 .employicon {
   width: 300px;
-  float: left;
-  transform: translateY(-20px);
+  position: absolute;
   transition: 0.3s;
+  opacity: 0;
 }
 
 .employshadow {
   width: 300px;
   float: left;
-  transform: translateY(-20px) translateX(-802.5px);
   transition: 0.3s;
   position: absolute;
+  z-index: 1;
+}
+
+/*The section that includes both the image and the shadow of each employee*/
+.employ {
+  transform: translateY(-20px);
+  float: left;
+  transition: 0.3s;
 }
 
 /* The format for each box in the about page */
@@ -432,6 +439,7 @@ section.MoveVid div.holder {
   padding: 50px;
   color: #EAD6D9;
   font-weight: bold;
+  z-index: -2;
 }
 
 /* The box color sections are just the change of colors of the previous boxes */
