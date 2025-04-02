@@ -24,12 +24,12 @@ function Expand(id) {
   const Chats = document.getElementById("ChatDetails");
   const Lems = document.getElementById("LemDetails");
   const Ems = document.getElementById("EmDetails");
-  const Maxs = document.getElementById("MaxDetails");
+  //const Maxs = document.getElementById("MaxDetails");
 
   const ChatArrow = document.getElementById("ChatArrow");
   const LemArrow = document.getElementById("LemArrow");
   const EmArrow = document.getElementById("EmArrow");
-  const MaxArrow = document.getElementById("MaxArrow");
+  //const MaxArrow = document.getElementById("MaxArrow");
 
   const Chat = document.getElementById("Chat");
   const Lem = document.getElementById("Lem");
@@ -38,11 +38,14 @@ function Expand(id) {
   const ChatIcon = document.getElementById("ChatIcon");
   const LemIcon = document.getElementById("LemIcon");
   const EmIcon = document.getElementById("EmIcon");
-  const MaxIcon = document.getElementById("MaxIcon");
+  //const MaxIcon = document.getElementById("MaxIcon");
 
   const ChatShadow = document.getElementById("ChatShadow");
   const LemShadow = document.getElementById("LemShadow");
   const EmShadow = document.getElementById("EmShadow");
+
+  const EmBox = document.getElementById("EmBox");
+  var HeightEm = EmBox.getBoundingClientRect().height;
 
   if (id == "ChatDetails"){
     if (Chats.style.height === "0px")
@@ -84,11 +87,12 @@ function Expand(id) {
   else if (id == "EmDetails") {
     if(Ems.style.height === "0px")
     {
-      Ems.style.height = "220px";
+      Ems.style.height = HeightEm + "px";
       EmArrow.style.transform = "rotate(180deg)";
       Em.style.transform = "translateY(175px)";
       EmShadow.style.opacity = "0";
       EmIcon.style.opacity = "1";
+      console.log(HeightEm);
     }
     else
     {
@@ -99,20 +103,20 @@ function Expand(id) {
       EmIcon.style.opacity = "0";
     }
   }
-  else if (id == "MaxDetails") {
-    if(Maxs.style.height === "0px")
-    {
-      Maxs.style.height = "210px";
-      MaxArrow.style.transform = "rotate(180deg)";
-      MaxIcon.style.transform = "translateY(175px)";
-    }
-    else
-    {
-      Maxs.style.height = "0px";
-      MaxArrow.style.transform = "rotate(0deg)";
-      MaxIcon.style.transform = "translateY(-20px)";
-    }
-  }
+  // else if (id == "MaxDetails") {
+  //   if(Maxs.style.height === "0px")
+  //   {
+  //     Maxs.style.height = "210px";
+  //     MaxArrow.style.transform = "rotate(180deg)";
+  //     MaxIcon.style.transform = "translateY(175px)";
+  //   }
+  //   else
+  //   {
+  //     Maxs.style.height = "0px";
+  //     MaxArrow.style.transform = "rotate(0deg)";
+  //     MaxIcon.style.transform = "translateY(-20px)";
+  //   }
+  // }
 
 }
 
@@ -120,37 +124,37 @@ function DropDownArrow(id) {
   var Chats = document.getElementById("ChatArrow");
   var Lems = document.getElementById("LemArrow");
   var Ems = document.getElementById("EmArrow");
-  var Maxs = document.getElementById("MaxArrow");
+  //var Maxs = document.getElementById("MaxArrow");
 
   if (id == "ChatArrow"){
     Chats.style.display = "block";
     Lems.style.display = "none";
     Ems.style.display = "none";
-    Maxs.style.display = "none";
+    //Maxs.style.display = "none";
   }
   else if (id == "LemArrow") {
     Chats.style.display = "none";
     Lems.style.display = "block";
     Ems.style.display = "none";
-    Maxs.style.display = "none";
+    //Maxs.style.display = "none";
   }
   else if (id == "EmArrow") {
     Chats.style.display = "none";
     Lems.style.display = "none";
     Ems.style.display = "block";
-    Maxs.style.display = "none";
+    //Maxs.style.display = "none";
   }
-  else if (id == "MaxArrow") {
-    Chats.style.display = "none";
-    Lems.style.display = "none";
-    Ems.style.display = "none";
-    Maxs.style.display = "block";
-  }
+  // else if (id == "MaxArrow") {
+  //   Chats.style.display = "none";
+  //   Lems.style.display = "none";
+  //   Ems.style.display = "none";
+  //   Maxs.style.display = "block";
+  // }
   else if (id == "None" && id != "ChatArrow" && id != "LemArrow" && id != "EmArrow" && id != "MaxArrow"){
     Chats.style.display = "none";
     Lems.style.display = "none";
     Ems.style.display = "none";
-    Maxs.style.display = "none";
+    //Maxs.style.display = "none";
   }
 }
 
@@ -300,15 +304,17 @@ window.addEventListener("scroll", VidScroll);
             <div onclick="Expand('EmDetails');" class="employtext" id="EmText">
               <div class="shadowbox">
                 <div class="iconbox">
+                  <div id="EmBox">
                   <div style="padding: 25px;">
                   <p><span class="important" style="color:#785A73;">Emily “Em” Bradford</span></p>
                   <p>Title: Lead Editor</p>
                   <p>Em ensures that each project component fits into the greater whole of the game, rather than convoluting it.</p>
 
-                    <div class="DetailsBox" id="EmDetails" style="height: 0px;">
+                    <div class="DetailsBox" id="EmDetails" style="height: 0px; overflow: hidden;">
                       <p>Em’s expertise stems from an extensive history of editing projects ranging from simple professional applications, published written pieces, to long-term episodic plot outlines and scripting. Applying her expertise to Third Party Applications, she moderates and manages the concepts for every aspect of the game. Mechanic ideas, visual components, and creative aspects are all edited to ensure it maintains a cohesive identity. Additionally, to ensure that this moderation is consistent, she actively involves herself with every aspect of the company, including game construction, narrative development, and visual conceptualization.</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>

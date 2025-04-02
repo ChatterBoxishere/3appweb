@@ -187,6 +187,7 @@ a {
 .sidebar {
   text-align: left;
   padding-top: 10px;
+  padding-left: 15px;
   width: 25%;
   box-sizing: border-box;
   float: left;
