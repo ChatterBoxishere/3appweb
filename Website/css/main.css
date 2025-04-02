@@ -29,10 +29,11 @@ body {
 
 /* The actual video of the animated page logo. */
 .scrollvideo {
-  width: 40%;
+  width: 50vw;
   float: left;
   position: static;
-  padding: 50px 0px;
+  padding: 40px 0px;
+  overflow: hidden;
 }
 
 /* Section that containers the header text. */
@@ -192,6 +193,7 @@ a {
   box-sizing: border-box;
   float: left;
   background-color: #8F718A;
+  padding-left: 15px;
 }
 
 /* The hat on the bottom of the Home page is seperated into a slightly different side bar, as seen below. */
@@ -303,7 +305,7 @@ ul {
 
 section.MoveStats div.holder {
   position: sticky;
-  top: 31vh;
+  top: 30vh;
 }
 
 /* The colored boxes each stat is in */
@@ -362,7 +364,7 @@ section.MoveStats div.holder {
 /* The section of detection for the top logo animation. */
 .VidSection {
   height: 100vh;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 200px;
 }
 
@@ -468,7 +470,7 @@ section.MoveVid div.holder {
 
 /* This is the container for the written information in the dropdown section */
 .DetailsBox {
-  overflow: hidden;
+  overflow: inherit;
   transition: 0.3s;
 }
 
