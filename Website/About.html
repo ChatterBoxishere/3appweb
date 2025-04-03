@@ -19,6 +19,26 @@
 
 <script>
 
+function StartBigBox() {
+  const BigBoxChat = document.getElementById("BigBoyBoxChat");
+  const LittleChat = document.getElementById("SmallStuffChat");
+
+  const BigBoxLem = document.getElementById("BigBoyBoxLem");
+  const LittleLem = document.getElementById("SmallStuffLem");
+
+  const BigBoxEm = document.getElementById("BigBoyBoxEm");
+  const LittleEm = document.getElementById("SmallStuffEm");
+
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
+
+  BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
+  BigBoxLem.style.height = LemAboveHeight + 40 + "px";
+  BigBoxEm.style.height = EmAboveHeight + 40 + "px";
+}
+
+
 function Expand(id) {
 
   const Chats = document.getElementById("ChatDetails");
@@ -44,22 +64,34 @@ function Expand(id) {
   const LemShadow = document.getElementById("LemShadow");
   const EmShadow = document.getElementById("EmShadow");
 
-  const EmBox = document.getElementById("EmBox");
-  var HeightEm = EmBox.getBoundingClientRect().height;
+  const BigBoxChat = document.getElementById("BigBoyBoxChat");
+  const LittleChat = document.getElementById("SmallStuffChat");
+  var ChatHiddenHeight = Chats.getBoundingClientRect().height;
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
+
+  const BigBoxLem = document.getElementById("BigBoyBoxLem");
+  const LittleLem = document.getElementById("SmallStuffLem");
+  var LemHiddenHeight = Lems.getBoundingClientRect().height;
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
+
+  const BigBoxEm = document.getElementById("BigBoyBoxEm");
+  const LittleEm = document.getElementById("SmallStuffEm");
+  var EmHiddenHeight = Ems.getBoundingClientRect().height;
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
 
   if (id == "ChatDetails"){
-    if (Chats.style.height === "0px")
+    if (ChatShadow.style.opacity === "1")
     {
-      Chats.style.height = "240px";
+      BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px";
       ChatArrow.style.transform = "rotate(180deg)";
-      Chat.style.transform = "translateY(175px)";
+      Chat.style.transform = "translateY(" + (ChatHiddenHeight - 20) + "px)";
       ChatShadow.style.opacity = "0";
       ChatIcon.style.opacity = "1";
 
     }
     else
     {
-      Chats.style.height = "0px";
+      BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
       ChatArrow.style.transform = "rotate(0deg)";
       Chat.style.transform = "translateY(-20px)";
       ChatShadow.style.opacity = "1";
@@ -67,38 +99,37 @@ function Expand(id) {
     }
   }
   else if (id == "LemDetails") {
-    if(Lems.style.height === "0px")
+    if(LemShadow.style.opacity === "1")
     {
-      Lems.style.height = "190px";
+      BigBoxLem.style.height = LemAboveHeight + LemHiddenHeight + 70 + "px";
       LemArrow.style.transform = "rotate(180deg)";
-      Lem.style.transform = "translateY(180px)";
+      Lem.style.transform = "translateY(" + (LemHiddenHeight - 20) + "px)";
       LemShadow.style.opacity = "0";
       LemIcon.style.opacity = "1";
     }
     else
     {
-      Lems.style.height = "0px";
+      BigBoxLem.style.height = LemAboveHeight + 40 + "px";
       LemArrow.style.transform = "rotate(0deg)";
-      Lem.style.transform = "translateY(-25px)";
+      Lem.style.transform = "translateY(-30px)";
       LemShadow.style.opacity = "1";
       LemIcon.style.opacity = "0";
     }
   }
   else if (id == "EmDetails") {
-    if(Ems.style.height === "0px")
+    if(EmShadow.style.opacity === "1")
     {
-      Ems.style.height = HeightEm + "px";
+      BigBoxEm.style.height = EmAboveHeight + EmHiddenHeight + 70 + "px";
       EmArrow.style.transform = "rotate(180deg)";
-      Em.style.transform = "translateY(175px)";
+      Em.style.transform = "translateY(" + (EmHiddenHeight - 20) + "px)";
       EmShadow.style.opacity = "0";
       EmIcon.style.opacity = "1";
-      console.log(HeightEm);
     }
     else
     {
-      Ems.style.height = "0px";
+      BigBoxEm.style.height = EmAboveHeight + 40 + "px";
       EmArrow.style.transform = "rotate(0deg)";
-      Em.style.transform = "translateY(-20px)";
+      Em.style.transform = "translateY(-30px)";
       EmShadow.style.opacity = "1";
       EmIcon.style.opacity = "0";
     }
@@ -194,7 +225,7 @@ window.addEventListener("scroll", VidScroll);
   <button class="tablink" style = margin-top:15><a href="About.html">About</a></button>
 </div>
 
-<body>
+<body onload="StartBigBox()">
 
 <section id="VidSection" class="VidSection">
   <div class="headvidholder">
@@ -246,17 +277,20 @@ window.addEventListener("scroll", VidScroll);
         <div class="Chatbox box" onmouseover="DropDownArrow('ChatArrow')" onmouseout="DropDownArrow('None')">
           <div class="content chat" id="chatheader">
             <div id="Chat" class="employ">
-              <img src="images/Chatter Icon Blank.png" class="employshadow" id="ChatShadow"></img>
+              <img src="images/Chatter Icon Blank.png" class="employshadow" id="ChatShadow" style="opacity: 1;"></img>
               <img src="images/Chatter Icon.png" class="employicon" id="ChatIcon"></img>
             </div>
             <div onclick="Expand('ChatDetails');" class="employtext" id="ChatText">
               <div class="shadowbox">
                     <div class="iconbox">
-                      <div style="padding: 25px;">
-                        <p><span class="important" style="color:#785A73;">Albert “Christian” Mezzaroba</span></p>
-                        <p>Title: Game Mechanics Director</p>
-                        <p>Spearheading the mechanical angle of game development is Christian, who ensures that each game presents its own unique player experience.</p>
-                        <div class="DetailsBox" id="ChatDetails" style="height: 0px;">
+                      <div id="BigBoyBoxChat" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
+                        <div id="SmallStuffChat">
+                          <p><span class="important" style="color:#785A73;">Albert “Christian” Mezzaroba</span></p>
+                          <p>Title: Game Mechanics Director</p>
+                          <p>Spearheading the mechanical angle of game development is Christian, who ensures that each game presents its own unique player experience.</p>
+                        </div>
+
+                        <div class="DetailsBox" id="ChatDetails" style="transition: 0.2s;">
                           <p>Christian’s passion for video games flourished into professional pursuit long before the founding of Third Party Applications. After several past projects and an ongoing academic pursuit of software development, Third Party Applications was and still is a culmination of his aspirations. With the implementation of his own expertise, Christian ensures the digital and mechanical components of game development are engaging and intuitive. The player experience is his first and foremost priority, and this outlook is enforced through mechanic research, proposal, and implementation. This often includes the exploration of various software to create a mechanically united game.</p>
                         </div>
                       </div>
@@ -266,23 +300,26 @@ window.addEventListener("scroll", VidScroll);
                   <button id="ChatArrow" class="arrowbutton" onclick="Expand('ChatDetails');" style="display:none;">V</button>
           </div>
         </div>
+        </div>
 
       <div class="LemBG">
         <div class="Lemonbox box" onmouseover="DropDownArrow('LemArrow')" onmouseout="DropDownArrow('None')">
           <div class="content lem" id="lemheader">
-            <div id="Lem" class="employ">
+            <div id="Lem" class="employ" style="transform: translateY(-30px);">
               <img src="images/Terran Icon.png" class="employicon" id="LemIcon"></img>
-              <img src="images/Terran Icon Blank.png" class="employshadow" id="LemShadow"></img>
+              <img src="images/Terran Icon Blank.png" class="employshadow" id="LemShadow" style="opacity: 1;"></img>
             </div>
             <div onclick="Expand('LemDetails');" class="employtext" id="LemText">
               <div class="shadowbox">
                 <div class="iconbox">
-                  <div style="padding: 25px;">
-                  <p><span class="important" style="color:#785A73;">Terran Mehan</span></p>
-                  <p>Title: Art Director</p>
-                  <p>Terran Mehan, as the exclusive artist of Third Party Applications, ensures that the visual component of game development prioritizes quality.</p>
+                  <div id="BigBoyBoxLem" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
+                    <div id="SmallStuffLem">
+                      <p><span class="important" style="color:#785A73;">Terran Mehan</span></p>
+                      <p>Title: Art Director</p>
+                      <p>Terran Mehan, as the exclusive artist of Third Party Applications, ensures that the visual component of game development prioritizes quality.</p>
+                    </div>
 
-                  <div class="DetailsBox" id="LemDetails" style="height: 0px;">
+                  <div class="DetailsBox" id="LemDetails" style="transition: 0.2s;">
                   <p>Before Third Party Applications, Terran worked on design assets for animated shorts, digital comics, interactive TTRPGs, and even unpublished video games. Inside the company, Terran pushes the creative angle of art direction. The UI, maps, concept art, and animation are all products of his innovation. Through the collaboration of talented writers and software experts of Third Party Applications, the art of our games is made with both form and function in mind. For all products in the future, big or small, Terran will ensure that it fits the company's vision.</p>
                   </div>
                 </div>
@@ -293,33 +330,34 @@ window.addEventListener("scroll", VidScroll);
 
             </div>
           </div>
+        </div>
 
       <div class="EmBG">
         <div class="Embox box" onmouseover="DropDownArrow('EmArrow')" onmouseout="DropDownArrow('None')">
           <div class="content em" id="emheader">
-            <div id="Em" class="employ">
+            <div id="Em" class="employ" style="transform: translateY(-30px);">
               <img src="images/Em Icon.png" class="employicon" id="EmIcon"></img>
-              <img src="images/Em Icon Blank.png" class="employshadow" id="EmShadow"></img>
+              <img src="images/Em Icon Blank.png" class="employshadow" id="EmShadow" style="opacity: 1;"></img>
             </div>
             <div onclick="Expand('EmDetails');" class="employtext" id="EmText">
               <div class="shadowbox">
                 <div class="iconbox">
-                  <div id="EmBox">
-                  <div style="padding: 25px;">
-                  <p><span class="important" style="color:#785A73;">Emily “Em” Bradford</span></p>
-                  <p>Title: Lead Editor</p>
-                  <p>Em ensures that each project component fits into the greater whole of the game, rather than convoluting it.</p>
+                  <div id="BigBoyBoxEm" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
+                    <div id="SmallStuffEm">
+                      <p><span class="important" style="color:#785A73;">Emily “Em” Bradford</span></p>
+                      <p>Title: Lead Editor</p>
+                      <p>Em ensures that each project component fits into the greater whole of the game, rather than convoluting it.</p>
+                    </div>
 
-                    <div class="DetailsBox" id="EmDetails" style="height: 0px; overflow: hidden;">
+                    <div class="DetailsBox" id="EmDetails" style="transition: 0.2s;">
                       <p>Em’s expertise stems from an extensive history of editing projects ranging from simple professional applications, published written pieces, to long-term episodic plot outlines and scripting. Applying her expertise to Third Party Applications, she moderates and manages the concepts for every aspect of the game. Mechanic ideas, visual components, and creative aspects are all edited to ensure it maintains a cohesive identity. Additionally, to ensure that this moderation is consistent, she actively involves herself with every aspect of the company, including game construction, narrative development, and visual conceptualization.</p>
                     </div>
                   </div>
                 </div>
                 </div>
               </div>
-            </div>
               <button id="EmArrow" class="arrowbutton EmArrow" onclick="Expand('EmDetails');" style="display:none;">V</button>
-
+            </div>
           </div>
         </div>
 
