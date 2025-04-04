@@ -39,8 +39,57 @@ function StartBigBox() {
 }
 
 
-function Expand(id) {
+function AdjustBigBox() {
+  const ChatShadow = document.getElementById("ChatShadow");
+  const LemShadow = document.getElementById("LemShadow");
+  const EmShadow = document.getElementById("EmShadow");
 
+  const Chats = document.getElementById("ChatDetails");
+  const Lems = document.getElementById("LemDetails");
+  const Ems = document.getElementById("EmDetails");
+
+  const BigBoxChat = document.getElementById("BigBoyBoxChat");
+  const LittleChat = document.getElementById("SmallStuffChat");
+
+  const BigBoxLem = document.getElementById("BigBoyBoxLem");
+  const LittleLem = document.getElementById("SmallStuffLem");
+
+  const BigBoxEm = document.getElementById("BigBoyBoxEm");
+  const LittleEm = document.getElementById("SmallStuffEm");
+
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
+
+  var ChatHiddenHeight = Chats.getBoundingClientRect().height;
+  var LemHiddenHeight = Lems.getBoundingClientRect().height;
+  var EmHiddenHeight = Ems.getBoundingClientRect().height;
+
+  if (ChatShadow.style.opacity === "0") {
+    BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px";
+  }
+  else {
+    BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
+  }
+
+  if (LemShadow.style.opacity === "0") {
+    BigBoxLem.style.height = LemAboveHeight + LemHiddenHeight + 70 + "px";
+  }
+  else {
+    BigBoxLem.style.height = LemAboveHeight + 40 + "px";
+  }
+
+  if (EmShadow.style.opacity === "0") {
+    BigBoxEm.style.height = EmAboveHeight + EmHiddenHeight + 70 + "px";
+  }
+  else {
+    BigBoxEm.style.height = EmAboveHeight + 40 + "px";
+  }
+
+}
+
+
+function Expand(id) {
   const Chats = document.getElementById("ChatDetails");
   const Lems = document.getElementById("LemDetails");
   const Ems = document.getElementById("EmDetails");
@@ -158,34 +207,34 @@ function DropDownArrow(id) {
   //var Maxs = document.getElementById("MaxArrow");
 
   if (id == "ChatArrow"){
-    Chats.style.display = "block";
-    Lems.style.display = "none";
-    Ems.style.display = "none";
-    //Maxs.style.display = "none";
+    Chats.style.opacity = "1"
+    Lems.style.opacity = "0"
+    Ems.style.opacity = "0"
+    //Maxs.style.opacity = "0"
   }
   else if (id == "LemArrow") {
-    Chats.style.display = "none";
-    Lems.style.display = "block";
-    Ems.style.display = "none";
-    //Maxs.style.display = "none";
+    Chats.style.opacity = "0"
+    Lems.style.opacity = "1"
+    Ems.style.opacity = "0"
+    //Maxs.style.opacity = "0"
   }
   else if (id == "EmArrow") {
-    Chats.style.display = "none";
-    Lems.style.display = "none";
-    Ems.style.display = "block";
-    //Maxs.style.display = "none";
+    Chats.style.opacity = "0"
+    Lems.style.opacity = "0"
+    Ems.style.opacity = "1"
+    //Maxs.style.opacity = "0"
   }
   // else if (id == "MaxArrow") {
-  //   Chats.style.display = "none";
-  //   Lems.style.display = "none";
-  //   Ems.style.display = "none";
-  //   Maxs.style.display = "block";
+  //   Chats.style.opacity = "0"
+  //   Lems.style.opacity = "0"
+  //   Ems.style.opacity = "0"
+  //   Maxs.style.opacity = "1"
   // }
   else if (id == "None" && id != "ChatArrow" && id != "LemArrow" && id != "EmArrow" && id != "MaxArrow"){
-    Chats.style.display = "none";
-    Lems.style.display = "none";
-    Ems.style.display = "none";
-    //Maxs.style.display = "none";
+    Chats.style.opacity = "0"
+    Lems.style.opacity = "0"
+    Ems.style.opacity = "0"
+    //Maxs.style.opacity = "0"
   }
 }
 
@@ -225,7 +274,7 @@ window.addEventListener("scroll", VidScroll);
   <button class="tablink" style = margin-top:15><a href="About.html">About</a></button>
 </div>
 
-<body onload="StartBigBox()">
+<body onload="StartBigBox()" onresize="AdjustBigBox()">
 
 <section id="VidSection" class="VidSection">
   <div class="headvidholder">
@@ -297,7 +346,7 @@ window.addEventListener("scroll", VidScroll);
                     </div>
                   </div>
               </div>
-                  <button id="ChatArrow" class="arrowbutton" onclick="Expand('ChatDetails');" style="display:none;">V</button>
+                  <button id="ChatArrow" class="arrowbutton" onclick="Expand('ChatDetails');" style="opacity: 0; display: block;">V</button>
           </div>
         </div>
         </div>
@@ -326,7 +375,7 @@ window.addEventListener("scroll", VidScroll);
                 </div>
               </div>
             </div>
-              <button id="LemArrow" class="arrowbutton LemArrow" onclick="Expand('LemDetails');" style="display:none;">V</button>
+              <button id="LemArrow" class="arrowbutton LemArrow" onclick="Expand('LemDetails');" style="opacity: 0; display: block;">V</button>
 
             </div>
           </div>
@@ -356,7 +405,7 @@ window.addEventListener("scroll", VidScroll);
                 </div>
                 </div>
               </div>
-              <button id="EmArrow" class="arrowbutton EmArrow" onclick="Expand('EmDetails');" style="display:none;">V</button>
+              <button id="EmArrow" class="arrowbutton EmArrow" onclick="Expand('EmDetails');" style="opacity: 0; display: block;">V</button>
             </div>
           </div>
         </div>

@@ -483,6 +483,7 @@ section.MoveVid div.holder {
 .employtext {
   margin-left: 300px;
   color: #785A73;
+  margin-bottom: 25px;
 }
 
 /* The arrow button that appears when a box is hovered over */
@@ -494,13 +495,17 @@ section.MoveVid div.holder {
   font-size: 50px;
   margin-left: 49%;
   padding: 0;
-  padding-top: 25px;
-  transition: 0.4s;
+  margin: 0;
+  width: 100%;
+
+  left: 0;
+  position: absolute;
+  transition: 0.3s;
 }
 
 /* The arrow then bolds whenever you hover directly over it */
 .arrowbutton:hover {
-  font-weight: bold;
+  font-size: 55px;
 }
 
 /* These are for the boxes on the about page */
