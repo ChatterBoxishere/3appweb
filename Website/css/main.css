@@ -27,50 +27,65 @@ body {
   overflow: hidden;
 }
 
+/* The section of detection for the top logo animation. */
+.VidSection {
+  margin-bottom: 200px;
+  height: 100vh;
+  /* min-height: 100vmin; */
+  position: relative;
+}
+
+.HeightHolderVid {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.headvidholder {
+  width: 75vw;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-16vw);
+}
+
 /* The actual video of the animated page logo. */
 .scrollvideo {
-  width: 50vw;
   float: left;
-  position: static;
-  padding: 40px 0px;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Section that containers the header text. */
 .containerhead{
-  width: 90%;
-  margin-top: 50px;
-  padding: 50px 50px;
+  margin-left: 32vw;
+  margin-bottom: 50px;
 }
 
 /* Page header. */
 .pagehead{
+  font-size: 11vw;
   text-align: left;
-  position: absolute;
-  padding-left: 30%;
-  font-size: 150px;
-  margin-top: 15vh;
+  margin: 0;
 }
 
 /* Page subheader. */
 .pagesubhead{
   text-align: left;
-  position: absolute;
-  padding-left: 30%;
-  margin-top: 47vh;
+  font-size: 7vw;
+  margin: 0;
 }
 
 
 /* Default heading. */
 h1 {
-  font-size: 100px;
+  font-size: 9vw;
   font-weight: lighter;
   margin-top: 30px;
 }
 
 /* Default subheading. */
 h2 {
-  font-size: 75px;
+  font-size: 5vw;
 
   font-weight: lighter;
   text-align: center;
@@ -90,7 +105,7 @@ p {
 /* If small text needs to have a little more 'umph'. */
 .important{
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2vw;
 }
 
 /* Header area in which the buttons are held */
@@ -113,7 +128,7 @@ p {
   z-index: 5;
   bottom: 0;
   width: 100%;
-  height: 5%;
+  height: 50px;
 
   overflow: hidden;
 
@@ -217,7 +232,7 @@ a {
 /* The More About Us button at the bottom of the page. */
  .misbutt {
    font-family: customfont;
-   font-size: 60px;
+   font-size: 3vw;
    color: #785A73;
    background-color: inherit;
    border: none;
@@ -241,7 +256,7 @@ a {
  }
 
  a.MisLink:hover button.misbutt {
-   font-size: 65px;
+   font-size: 4vw;
  }
 
 /* PROJECTS PAGE IS BELOW */
@@ -301,11 +316,17 @@ ul {
 
 .MoveStats {
   height: 175vh;
+  align-items: flex-end;
 }
 
 section.MoveStats div.holder {
   position: sticky;
-  top: 30vh;
+  top: 350px;
+}
+
+section.TestLine div.holdertest {
+  position: fixed;
+  bottom: 0;
 }
 
 /* The colored boxes each stat is in */
@@ -359,13 +380,6 @@ section.MoveStats div.holder {
   font-weight: bold;
   margin: 0;
   padding: 50px;
-}
-
-/* The section of detection for the top logo animation. */
-.VidSection {
-  height: 100vh;
-  margin-top: 50px;
-  margin-bottom: 200px;
 }
 
 /* The Final Odessey 'behind the scenes' placeholder video. */

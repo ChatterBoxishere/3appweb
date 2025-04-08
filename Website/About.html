@@ -238,30 +238,6 @@ function DropDownArrow(id) {
   }
 }
 
-const VidScroll = () => {
-  var section = document.getElementById("VidSection");
-  var vid = document.getElementById("scrollvideo");
-
-  var SectionPos = section.getBoundingClientRect();
-  const distance = window.scrollY;
-  const TotalDis = SectionPos.height / 1.5;
-
-  vid.pause();
-
-  let percentage = distance / TotalDis;
-  percentage = Math.max(0, percentage);
-  percentage = Math.min(percentage, 1);
-
-  console.log(percentage);
-
-  if (vid.duration > 0){
-    vid.currentTime = vid.duration * percentage;
-  }
-
-}
-
-window.addEventListener("scroll", VidScroll);
-
 </script>
 
   <link href="css/main.css" rel="stylesheet" type="text/css">
@@ -277,12 +253,14 @@ window.addEventListener("scroll", VidScroll);
 <body onload="StartBigBox()" onresize="AdjustBigBox()">
 
 <section id="VidSection" class="VidSection">
-  <div class="headvidholder">
-    <video id="scrollvideo" class="scrollvideo" style="float:right; width: 45%;" src="videos/3PA Hat Animation.mp4" muted playsinline></video>
-  </div>
-  <div class="containerhead">
-    <h1 class="pagehead" style="padding-left:16%; margin-top: 20vh;">ABOUT US</h1>
-    <h2 class="pagesubhead" style="padding-left:6%; margin-top:37vh;">WELCOME TO THE PARTY</h2>
+  <div class="HeightHolderVid">
+    <div class="headvidholder">
+      <video id="scrollvideo" class="scrollvideo" src="videos/Hat Web Animation.mp4" muted autoplay></video>
+    </div>
+    <div class="containerhead">
+      <h1 class="pagehead" style="font-size: 12vw; padding-top: 9vw;">ABOUT US</h1>
+      <h2 class="pagesubhead" style="font-size: 6.25vw;">WELCOME TO THE PARTY</h2>
+    </div>
   </div>
 </section>
 
@@ -334,7 +312,7 @@ window.addEventListener("scroll", VidScroll);
                     <div class="iconbox">
                       <div id="BigBoyBoxChat" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
                         <div id="SmallStuffChat">
-                          <p><span class="important" style="color:#785A73;">Albert “Christian” Mezzaroba</span></p>
+                          <p><span class="important" style="color:#785A73; font-size: 40px;">Albert “Christian” Mezzaroba</span></p>
                           <p>Title: Game Mechanics Director</p>
                           <p>Spearheading the mechanical angle of game development is Christian, who ensures that each game presents its own unique player experience.</p>
                         </div>
@@ -363,7 +341,7 @@ window.addEventListener("scroll", VidScroll);
                 <div class="iconbox">
                   <div id="BigBoyBoxLem" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
                     <div id="SmallStuffLem">
-                      <p><span class="important" style="color:#785A73;">Terran Mehan</span></p>
+                      <p><span class="important" style="color:#785A73; font-size: 40px;">Terran Mehan</span></p>
                       <p>Title: Art Director</p>
                       <p>Terran Mehan, as the exclusive artist of Third Party Applications, ensures that the visual component of game development prioritizes quality.</p>
                     </div>
@@ -393,7 +371,7 @@ window.addEventListener("scroll", VidScroll);
                 <div class="iconbox">
                   <div id="BigBoyBoxEm" style="padding: 25px; overflow: hidden; height: 100px; transition: 0.2s;">
                     <div id="SmallStuffEm">
-                      <p><span class="important" style="color:#785A73;">Emily “Em” Bradford</span></p>
+                      <p><span class="important" style="color:#785A73; font-size: 40px;">Emily “Em” Bradford</span></p>
                       <p>Title: Lead Editor</p>
                       <p>Em ensures that each project component fits into the greater whole of the game, rather than convoluting it.</p>
                     </div>
@@ -415,7 +393,7 @@ window.addEventListener("scroll", VidScroll);
           <div class="content em" id="maxheader">
             <img src="images/Max Icon.png" class="employicon" id="MaxIcon"></img>
             <div onclick="Expand('MaxDetails');" class="employtext" id="MaxText">
-              <p><span class="important" style="color:#785A73;">Max Gugliotta</span></p>
+              <p><span class="important" style="color:#785A73; font-size: 40px;">Max Gugliotta</span></p>
               <p>Title: Lead Creative Writer</p>
               <p >As the Lead Creative Writer, Max ensures the plot of a game and its contents are as interesting and robust as possible.</p>
             </div>
