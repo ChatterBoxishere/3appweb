@@ -7,9 +7,7 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <title>Home</title>
-<!--    link the stylesheets here-->
 
-  <!--<link rel="stylesheet" href="fonts.css">-->
   <style>
   @font-face {
     font-family: customfont;
@@ -17,18 +15,10 @@
   }
   </style>
 
-  <!--<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">-->
-
   <link href="css/main.css" rel="stylesheet" type="text/css">
 
 </head>
-
+<!-- Navigation bar at the top of the page -->
 <div class="tab" style="padding: 25px">
   <a href="Home.html"><button class="tablink" style = margin-top:15>Home</button></a>
   <a href="Projects.html"><button class="tablink" style = margin-top:15>Projects</button></a>
@@ -61,32 +51,11 @@ function PresentClose() {
   More.style.zIndex = "-1";
 }
 
-// const VidScroll = () => {
-//   var section = document.getElementById("VidSection");
-//   var vid = document.getElementById("scrollvideo");
-//
-//   var SectionPos = section.getBoundingClientRect();
-//   const distance = window.scrollY;
-//   const TotalDis = SectionPos.height / 1.5;
-//
-//   vid.pause();
-//
-//   let percentage = distance / TotalDis;
-//   percentage = Math.max(0, percentage);
-//   percentage = Math.min(percentage, 1);
-//
-//   if (vid.duration > 0){
-//     vid.currentTime = vid.duration * percentage;
-//   }
-//
-// }
-//
-// window.addEventListener("scroll", VidScroll);
-
 </script>
 
 <body onresize="AdjustVid()" onload="AdjustVid()">
 
+<!-- Logo header, including animated icon -->
 <section id="VidSection" class="VidSection">
   <div class="HeightHolderVid">
     <div class="headvidholder">
@@ -99,12 +68,15 @@ function PresentClose() {
   </div>
 </section>
 
+<!-- Slope decorations to start out next section -->
 <div class="circleBG" style="padding-bottom: 40px;">
   <div class="circlecut" style="transform: translateY(-10px);background-color: #E88985"></div>
   <div class="circlecut" style="transform: translateY(-50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
   <div class="circlecut" style="transform: translateY(-90px); background-color: #EAD6D9; clip-path: ellipse(52vw 120px);"></div>
 </div>
 
+<!-- Game updates section, including button, text, and video -->
+  <!-- The left side section with the text and button -->
   <aside id="sidebar" class="sidebar">
     <div style="padding: 10px;">
       <div class="shadowbox shadowbutton">
@@ -125,13 +97,13 @@ function PresentClose() {
       </div>
     </div>
   </aside>
-
+  <!-- The video that follows you. -->
 <section class="MoveVid" id="VidHeight" style="height: 175vh;">
   <div class="holder">
     <video id="homevideo" class="homevideo" src="videos/Final Odyssey Overhaul Trailer.mp4" autoplay muted loop></video>
   </div>
 </secion>
-
+<!-- End section slope decorations -->
 <div class="circleBG">
   <div class="circlecut" style="transform: translateY(10px);background-color: #E88985"></div>
   <div class="circlecut" style="transform: translateY(50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
@@ -143,9 +115,9 @@ function PresentClose() {
 <div class="container" style="padding-top:20vh; padding-bottom:0;">
 </div>
 
+<!-- Our Mission section -->
  <div class="MissButton" id="MissButton" onmouseover="PresentOpen()" onmouseout="PresentClose()" style="margin-bottom: 10vh;">
-
-
+   <!-- The presents! -->
    <ul style="position: absolute; margin-left: 8vw; margin-right: 8vw; transform: translateY(-50%)">
      <img src="images/Yellow Present.png" width="25%" style="rotate: -15deg">
      <section width="25%" style="transform: translateY(-10%)">
@@ -155,7 +127,7 @@ function PresentClose() {
      </section>
      <img src="images/Orange Present.png" width="25%" style="rotate: 15deg">
    </ul>
-
+   <!-- The text box -->
     <div class="mission">
       <div class="shadowbox">
         <div class="iconbox">
@@ -170,8 +142,9 @@ function PresentClose() {
 
 </body>
 
+<!-- Footer -->
 <div class="bottom">
-  <button class="tablink2"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
+  <button class="tablink2" style="margin-right: 15px;"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://www.tiktok.com/@thirdpartyapplications?is_from_webapp=1&sender_device=pc"><img src="images/Tiktok.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://youtube.com/@ThirdPartyApplications"><img src="images/Youtube.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://www.reddit.com/r/3rdpartyApplications/"><img src="images/Reddit.png" width="70" height="70"></img></a></button>

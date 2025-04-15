@@ -229,7 +229,6 @@ a {
   margin-right: 125px;
 }
 
-/* Text within the mission section. */
 /* The More About Us button at the bottom of the page. */
  .misbutt {
    font-family: customfont;
@@ -251,13 +250,16 @@ a {
    transition: 0.2s;
  }
 
-/* What happens to the More About Us button when hovered over (expands) */
- .misbutt:hover {
-
- }
-
+/* What happens to the More About Us button when hovered over */
  a.MisLink:hover button.misbutt {
    font-size: 4vw;
+ }
+
+/* This section ensures the little presents on the home page look nice and stay alongside each other */
+ ul {
+   padding: 0;
+   margin: 0;
+   display: flex;
  }
 
 /* PROJECTS PAGE IS BELOW */
@@ -293,41 +295,32 @@ a {
   transform: translateX(8.5vw);
 }
 
+/*The white path image itself*/
 .SpritePath {
-  width: 78vw;
+  width: 74vw;
 }
-
+ /*The container of the white path image, allowing only some parts to be visible at a time */
 .SpritePathBG {
-  width: 78vw;
+  display: grid;
+  place-items: center;
+
+  left: 50%;
+
+  width: 74vw;
   margin-top: 75px;
-  float: left;
-  left: 0;
+
   position: absolute;
   z-index: 2;
-  margin-left: 11vw;
+  float: left;
+
   overflow: hidden;
+
+  transform: translateX(0.5vw);
 }
 
-/*creates the effect of them being alongside each other more easily. */
-ul {
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
+/*how long between stat boxs with scrolls*/
 .MoveStats {
-  height: 175vh;
-  align-items: flex-end;
-}
-
-section.MoveStats div.holder {
-  position: sticky;
-  top: 350px;
-}
-
-section.TestLine div.holdertest {
-  position: fixed;
-  bottom: 0;
+  height: 100vh;
 }
 
 /* The colored boxes each stat is in */
@@ -389,7 +382,7 @@ section.TestLine div.holdertest {
   display: block;
   margin: auto;
   padding: none;
-  height: 85vh;
+  width: 80vw;
   padding-bottom: 5vh;
   padding-top: 5vh;
 }
@@ -573,6 +566,9 @@ section.MoveVid div.holder {
 	background-color: rgba(0,0,0,0);
 
 	border-radius: 20px;
+
+  float: right;
+
 }
 
 /* Effects done on the buttons in the footer */

@@ -19,57 +19,58 @@
 
 <script>
 
+//Adjusts the size of the boxes when loading the page to fit
 function StartBigBox() {
-  const BigBoxChat = document.getElementById("BigBoyBoxChat");
-  const LittleChat = document.getElementById("SmallStuffChat");
+  const BigBoxChat = document.getElementById("BigBoyBoxChat"); //The contents Chatters the box when it's open
+  const LittleChat = document.getElementById("SmallStuffChat"); //The contents of the box when it's closed
 
-  const BigBoxLem = document.getElementById("BigBoyBoxLem");
-  const LittleLem = document.getElementById("SmallStuffLem");
+  const BigBoxLem = document.getElementById("BigBoyBoxLem"); //The contents Lemon the box when it's open
+  const LittleLem = document.getElementById("SmallStuffLem"); //The contents of the box when it's closed
 
-  const BigBoxEm = document.getElementById("BigBoyBoxEm");
-  const LittleEm = document.getElementById("SmallStuffEm");
+  const BigBoxEm = document.getElementById("BigBoyBoxEm"); //The contents Em the box when it's open
+  const LittleEm = document.getElementById("SmallStuffEm"); //The contents of the box when it's closed
 
-  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
-  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
-  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height; //The height Chatters the box when it's open
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height; //The height Lemons the box when it's open
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height; //The height Chatters the box when it's open
 
-  BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
+  BigBoxChat.style.height = ChatAboveHeight + 40 + "px"; //Adds the padding of the box to make sure it doesn't cut off exactly at the end of the text
   BigBoxLem.style.height = LemAboveHeight + 40 + "px";
   BigBoxEm.style.height = EmAboveHeight + 40 + "px";
 }
 
-
+ //Changes the size of the boxes if the window size is adjusted. This factors in if the box is open or closed and sticks to that.
 function AdjustBigBox() {
-  const ChatShadow = document.getElementById("ChatShadow");
-  const LemShadow = document.getElementById("LemShadow");
-  const EmShadow = document.getElementById("EmShadow");
+  const ChatShadow = document.getElementById("ChatShadow"); //The color block sillhoute for Chatter
+  const LemShadow = document.getElementById("LemShadow"); //The color block sillhoute for Lemon
+  const EmShadow = document.getElementById("EmShadow"); //The color block sillhoute for Lemon
 
-  const Chats = document.getElementById("ChatDetails");
-  const Lems = document.getElementById("LemDetails");
-  const Ems = document.getElementById("EmDetails");
+  const Chats = document.getElementById("ChatDetails"); //Contents of Chatters box
+  const Lems = document.getElementById("LemDetails"); //Contents of Lemons box
+  const Ems = document.getElementById("EmDetails"); //Contents of Ems box
 
-  const BigBoxChat = document.getElementById("BigBoyBoxChat");
-  const LittleChat = document.getElementById("SmallStuffChat");
+  const BigBoxChat = document.getElementById("BigBoyBoxChat"); //The contents of Chatters box when it's open
+  const LittleChat = document.getElementById("SmallStuffChat"); //The contents of the box when it's closed
 
-  const BigBoxLem = document.getElementById("BigBoyBoxLem");
-  const LittleLem = document.getElementById("SmallStuffLem");
+  const BigBoxLem = document.getElementById("BigBoyBoxLem"); //The contents of Lemon box when it's open
+  const LittleLem = document.getElementById("SmallStuffLem"); //The contents of the box when it's closed
 
-  const BigBoxEm = document.getElementById("BigBoyBoxEm");
-  const LittleEm = document.getElementById("SmallStuffEm");
+  const BigBoxEm = document.getElementById("BigBoyBoxEm"); //The contents of Em box when it's open
+  const LittleEm = document.getElementById("SmallStuffEm"); //The contents of the box when it's closed
 
-  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
-  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
-  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height; //The height of Chatters box when it's closed
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height; //The height of Lemons box when it's closed
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height; //The height of Ems box when it's closed
 
-  var ChatHiddenHeight = Chats.getBoundingClientRect().height;
-  var LemHiddenHeight = Lems.getBoundingClientRect().height;
-  var EmHiddenHeight = Ems.getBoundingClientRect().height;
+  var ChatHiddenHeight = Chats.getBoundingClientRect().height; //The height of Chatters the box when it's open
+  var LemHiddenHeight = Lems.getBoundingClientRect().height; //The height Chatters the box when it's open
+  var EmHiddenHeight = Ems.getBoundingClientRect().height; //The height Chatters the box when it's open
 
-  if (ChatShadow.style.opacity === "0") {
-    BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px";
+  if (ChatShadow.style.opacity === "0") { //When the icon is visible (aka box is open)
+    BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px"; //Add together the height of visible and hidden content to keep box open.
   }
-  else {
-    BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
+  else { //When the icon is hidden (aka box is closed)
+    BigBoxChat.style.height = ChatAboveHeight + 40 + "px"; //Set the height to only the intiially visible content. Aka keep the box closed.
   }
 
   if (LemShadow.style.opacity === "0") {
@@ -88,153 +89,126 @@ function AdjustBigBox() {
 
 }
 
-
+//Open the box!!
 function Expand(id) {
-  const Chats = document.getElementById("ChatDetails");
-  const Lems = document.getElementById("LemDetails");
-  const Ems = document.getElementById("EmDetails");
-  //const Maxs = document.getElementById("MaxDetails");
+  const Chats = document.getElementById("ChatDetails"); //Contents of Chatters box
+  const Lems = document.getElementById("LemDetails"); //Contents of Lemons box
+  const Ems = document.getElementById("EmDetails"); //Contents of Ems box
 
-  const ChatArrow = document.getElementById("ChatArrow");
+  const ChatArrow = document.getElementById("ChatArrow"); //Arrows of the correlated box
   const LemArrow = document.getElementById("LemArrow");
   const EmArrow = document.getElementById("EmArrow");
-  //const MaxArrow = document.getElementById("MaxArrow");
 
-  const Chat = document.getElementById("Chat");
+  const Chat = document.getElementById("Chat"); //Big boxs that contains the text box, arrows, and icons
   const Lem = document.getElementById("Lem");
   const Em = document.getElementById("Em");
 
-  const ChatIcon = document.getElementById("ChatIcon");
+  const ChatIcon = document.getElementById("ChatIcon"); //Normal icons
   const LemIcon = document.getElementById("LemIcon");
   const EmIcon = document.getElementById("EmIcon");
-  //const MaxIcon = document.getElementById("MaxIcon");
 
-  const ChatShadow = document.getElementById("ChatShadow");
+  const ChatShadow = document.getElementById("ChatShadow"); //Icon sillhoutes
   const LemShadow = document.getElementById("LemShadow");
   const EmShadow = document.getElementById("EmShadow");
 
-  const BigBoxChat = document.getElementById("BigBoyBoxChat");
-  const LittleChat = document.getElementById("SmallStuffChat");
-  var ChatHiddenHeight = Chats.getBoundingClientRect().height;
-  var ChatAboveHeight = LittleChat.getBoundingClientRect().height;
+  const BigBoxChat = document.getElementById("BigBoyBoxChat"); //The contents of Chatters box when it's open
+  const LittleChat = document.getElementById("SmallStuffChat"); //The contents of Chatters box when it's closed
+  var ChatHiddenHeight = Chats.getBoundingClientRect().height; //The height of the intially hidden content
+  var ChatAboveHeight = LittleChat.getBoundingClientRect().height; //The height of the intially visible content
 
-  const BigBoxLem = document.getElementById("BigBoyBoxLem");
-  const LittleLem = document.getElementById("SmallStuffLem");
-  var LemHiddenHeight = Lems.getBoundingClientRect().height;
-  var LemAboveHeight = LittleLem.getBoundingClientRect().height;
+  const BigBoxLem = document.getElementById("BigBoyBoxLem"); //The contents of Lemons box when it's open
+  const LittleLem = document.getElementById("SmallStuffLem"); //The contents of Lemons box when it's closed
+  var LemHiddenHeight = Lems.getBoundingClientRect().height; //The height of the intially hidden content
+  var LemAboveHeight = LittleLem.getBoundingClientRect().height; //The height of the intially visible content
 
-  const BigBoxEm = document.getElementById("BigBoyBoxEm");
-  const LittleEm = document.getElementById("SmallStuffEm");
-  var EmHiddenHeight = Ems.getBoundingClientRect().height;
-  var EmAboveHeight = LittleEm.getBoundingClientRect().height;
+  const BigBoxEm = document.getElementById("BigBoyBoxEm"); //The contents of Ems box when it's open
+  const LittleEm = document.getElementById("SmallStuffEm"); //The contents of Ems box when it's closed
+  var EmHiddenHeight = Ems.getBoundingClientRect().height; //The height of the intially hidden content
+  var EmAboveHeight = LittleEm.getBoundingClientRect().height; //The height of the intially visible content
 
-  if (id == "ChatDetails"){
-    if (ChatShadow.style.opacity === "1")
+  if (id == "ChatDetails"){ //If the box clicked is Chatters box
+    if (ChatShadow.style.opacity === "1") //If the shadow is visible, aka box is closed
     {
-      BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px";
-      ChatArrow.style.transform = "rotate(180deg)";
-      Chat.style.transform = "translateY(" + (ChatHiddenHeight - 20) + "px)";
-      ChatShadow.style.opacity = "0";
-      ChatIcon.style.opacity = "1";
+      BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px"; //Modify height to open box
+      ChatArrow.style.transform = "rotate(180deg)"; //turn arrow to an upward position
+      Chat.style.transform = "translateY(" + (ChatHiddenHeight - 20) + "px)"; //Push icon down to bottom
+      ChatShadow.style.opacity = "0"; //Make shadow invisible
+      ChatIcon.style.opacity = "1"; //Make icon visible
 
     }
     else
     {
-      BigBoxChat.style.height = ChatAboveHeight + 40 + "px";
-      ChatArrow.style.transform = "rotate(0deg)";
-      Chat.style.transform = "translateY(-20px)";
-      ChatShadow.style.opacity = "1";
-      ChatIcon.style.opacity = "0";
+      BigBoxChat.style.height = ChatAboveHeight + 40 + "px"; //Modify height to close box
+      ChatArrow.style.transform = "rotate(0deg)"; //Turn arrow to a downward position
+      Chat.style.transform = "translateY(-20px)"; //Pull icon to top
+      ChatShadow.style.opacity = "1"; //Make shadow visible
+      ChatIcon.style.opacity = "0"; //Make icon invisible
     }
   }
   else if (id == "LemDetails") {
     if(LemShadow.style.opacity === "1")
     {
-      BigBoxLem.style.height = LemAboveHeight + LemHiddenHeight + 70 + "px";
-      LemArrow.style.transform = "rotate(180deg)";
-      Lem.style.transform = "translateY(" + (LemHiddenHeight - 20) + "px)";
-      LemShadow.style.opacity = "0";
-      LemIcon.style.opacity = "1";
+      BigBoxLem.style.height = LemAboveHeight + LemHiddenHeight + 70 + "px"; //Modify height to open box
+      LemArrow.style.transform = "rotate(180deg)"; //turn arrow to an upward position
+      Lem.style.transform = "translateY(" + (LemHiddenHeight - 20) + "px)"; //Push icon down to bottom
+      LemShadow.style.opacity = "0"; //Make shadow invisible
+      LemIcon.style.opacity = "1"; //Make icon visible
     }
     else
     {
-      BigBoxLem.style.height = LemAboveHeight + 40 + "px";
-      LemArrow.style.transform = "rotate(0deg)";
-      Lem.style.transform = "translateY(-30px)";
-      LemShadow.style.opacity = "1";
-      LemIcon.style.opacity = "0";
+      BigBoxLem.style.height = LemAboveHeight + 40 + "px"; //Modify height to close box
+      LemArrow.style.transform = "rotate(0deg)"; //Turn arrow to a downward position
+      Lem.style.transform = "translateY(-30px)"; //Pull icon to top
+      LemShadow.style.opacity = "1"; //Make shadow visible
+      LemIcon.style.opacity = "0"; //Make icon invisible
     }
   }
   else if (id == "EmDetails") {
     if(EmShadow.style.opacity === "1")
     {
-      BigBoxEm.style.height = EmAboveHeight + EmHiddenHeight + 70 + "px";
-      EmArrow.style.transform = "rotate(180deg)";
-      Em.style.transform = "translateY(" + (EmHiddenHeight - 20) + "px)";
-      EmShadow.style.opacity = "0";
-      EmIcon.style.opacity = "1";
+      BigBoxEm.style.height = EmAboveHeight + EmHiddenHeight + 70 + "px"; //Modify height to open box
+      EmArrow.style.transform = "rotate(180deg)"; //turn arrow to an upward position
+      Em.style.transform = "translateY(" + (EmHiddenHeight - 20) + "px)"; //Push icon down to bottom
+      EmShadow.style.opacity = "0"; //Make shadow invisible
+      EmIcon.style.opacity = "1"; //Make icon visible
     }
     else
     {
-      BigBoxEm.style.height = EmAboveHeight + 40 + "px";
-      EmArrow.style.transform = "rotate(0deg)";
-      Em.style.transform = "translateY(-30px)";
-      EmShadow.style.opacity = "1";
-      EmIcon.style.opacity = "0";
+      BigBoxEm.style.height = EmAboveHeight + 40 + "px"; //Modify height to close box
+      EmArrow.style.transform = "rotate(0deg)"; //Turn arrow to a downward position
+      Em.style.transform = "translateY(-30px)"; //Pull icon to top
+      EmShadow.style.opacity = "1"; //Make shadow visible
+      EmIcon.style.opacity = "0"; //Make icon invisible
     }
   }
-  // else if (id == "MaxDetails") {
-  //   if(Maxs.style.height === "0px")
-  //   {
-  //     Maxs.style.height = "210px";
-  //     MaxArrow.style.transform = "rotate(180deg)";
-  //     MaxIcon.style.transform = "translateY(175px)";
-  //   }
-  //   else
-  //   {
-  //     Maxs.style.height = "0px";
-  //     MaxArrow.style.transform = "rotate(0deg)";
-  //     MaxIcon.style.transform = "translateY(-20px)";
-  //   }
-  // }
 
 }
 
+//makes arrow visible if you hover over the corresponding employees box. When box overed over, sends id name to this function
 function DropDownArrow(id) {
-  var Chats = document.getElementById("ChatArrow");
+  var Chats = document.getElementById("ChatArrow"); //Grab reference to the arrows
   var Lems = document.getElementById("LemArrow");
   var Ems = document.getElementById("EmArrow");
-  //var Maxs = document.getElementById("MaxArrow");
 
-  if (id == "ChatArrow"){
-    Chats.style.opacity = "1"
+  if (id == "ChatArrow"){ //If Chatters box
+    Chats.style.opacity = "1" //Make only Chatters arrow visible
     Lems.style.opacity = "0"
     Ems.style.opacity = "0"
-    //Maxs.style.opacity = "0"
   }
-  else if (id == "LemArrow") {
-    Chats.style.opacity = "0"
+  else if (id == "LemArrow") { //If Lemons box
+    Chats.style.opacity = "0" //Make only Lemons arrow visible
     Lems.style.opacity = "1"
     Ems.style.opacity = "0"
-    //Maxs.style.opacity = "0"
   }
-  else if (id == "EmArrow") {
-    Chats.style.opacity = "0"
+  else if (id == "EmArrow") { //If Ems box
+    Chats.style.opacity = "0" //Make only Ems arrow visible
     Lems.style.opacity = "0"
     Ems.style.opacity = "1"
-    //Maxs.style.opacity = "0"
   }
-  // else if (id == "MaxArrow") {
-  //   Chats.style.opacity = "0"
-  //   Lems.style.opacity = "0"
-  //   Ems.style.opacity = "0"
-  //   Maxs.style.opacity = "1"
-  // }
-  else if (id == "None" && id != "ChatArrow" && id != "LemArrow" && id != "EmArrow" && id != "MaxArrow"){
-    Chats.style.opacity = "0"
+  else if (id == "None" && id != "ChatArrow" && id != "LemArrow" && id != "EmArrow"){ //If no ones box is being hovered over
+    Chats.style.opacity = "0" //Change them all back to invisible
     Lems.style.opacity = "0"
     Ems.style.opacity = "0"
-    //Maxs.style.opacity = "0"
   }
 }
 
@@ -243,7 +217,7 @@ function DropDownArrow(id) {
   <link href="css/main.css" rel="stylesheet" type="text/css">
 
 </head>
-
+<!-- Navigation bar at the top of the page -->
 <div class="tab" style="padding: 25px">
   <button class="tablink" style = margin-top:15><a href="Home.html">Home</a></button>
   <button class="tablink" style = margin-top:15>P<a href="Projects.html">rojects</a></button>
@@ -252,6 +226,7 @@ function DropDownArrow(id) {
 
 <body onload="StartBigBox()" onresize="AdjustBigBox()">
 
+<!-- Logo header, including animated icon -->
 <section id="VidSection" class="VidSection">
   <div class="HeightHolderVid" style="margin-bottom: 16vw;">
     <div class="headvidholder">
@@ -264,6 +239,7 @@ function DropDownArrow(id) {
   </div>
 </section>
 
+<!-- Company Origin text and slope decorations -->
 <div class="circleBG" style="padding-bottom: 40px;">
   <div class="circlecut" style="transform: translateY(-10px);background-color: #E88985"></div>
   <div class="circlecut" style="transform: translateY(-50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
@@ -292,6 +268,7 @@ function DropDownArrow(id) {
 </body>
 </div>
 
+<!-- Entire employee box section -->
   <div>
     <section>
       <div class="BlackBoxBG" style="background-color: #F5B765">
@@ -300,6 +277,8 @@ function DropDownArrow(id) {
         </div>
       </div>
 
+  <!-- Chatters section -->
+    <!-- Visible at the start -->
       <div class="ChatBG">
         <div class="Chatbox box" onmouseover="DropDownArrow('ChatArrow')" onmouseout="DropDownArrow('None')">
           <div class="content chat" id="chatheader">
@@ -316,7 +295,7 @@ function DropDownArrow(id) {
                           <p>Title: Game Mechanics Director</p>
                           <p>Spearheading the mechanical angle of game development is Christian, who ensures that each game presents its own unique player experience.</p>
                         </div>
-
+    <!-- Hidden at the start -->
                         <div class="DetailsBox" id="ChatDetails" style="transition: 0.2s;">
                           <p>Christian’s passion for video games flourished into professional pursuit long before the founding of Third Party Applications. After several past projects and an ongoing academic pursuit of software development, Third Party Applications was and still is a culmination of his aspirations. With the implementation of his own expertise, Christian ensures the digital and mechanical components of game development are engaging and intuitive. The player experience is his first and foremost priority, and this outlook is enforced through mechanic research, proposal, and implementation. This often includes the exploration of various software to create a mechanically united game.</p>
                         </div>
@@ -329,6 +308,8 @@ function DropDownArrow(id) {
         </div>
         </div>
 
+  <!-- Lemons section -->
+    <!-- Visible at the start -->
       <div class="LemBG">
         <div class="Lemonbox box" onmouseover="DropDownArrow('LemArrow')" onmouseout="DropDownArrow('None')">
           <div class="content lem" id="lemheader">
@@ -345,7 +326,7 @@ function DropDownArrow(id) {
                       <p>Title: Art Director</p>
                       <p>Terran Mehan, as the exclusive artist of Third Party Applications, ensures that the visual component of game development prioritizes quality.</p>
                     </div>
-
+    <!-- Hidden at the start -->
                   <div class="DetailsBox" id="LemDetails" style="transition: 0.2s;">
                   <p>Before Third Party Applications, Terran worked on design assets for animated shorts, digital comics, interactive TTRPGs, and even unpublished video games. Inside the company, Terran pushes the creative angle of art direction. The UI, maps, concept art, and animation are all products of his innovation. Through the collaboration of talented writers and software experts of Third Party Applications, the art of our games is made with both form and function in mind. For all products in the future, big or small, Terran will ensure that it fits the company's vision.</p>
                   </div>
@@ -359,6 +340,8 @@ function DropDownArrow(id) {
           </div>
         </div>
 
+  <!-- Ems section -->
+    <!-- Visible at the start -->
       <div class="EmBG">
         <div class="Embox box" onmouseover="DropDownArrow('EmArrow')" onmouseout="DropDownArrow('None')">
           <div class="content em" id="emheader">
@@ -375,7 +358,7 @@ function DropDownArrow(id) {
                       <p>Title: Lead Editor</p>
                       <p>Em ensures that each project component fits into the greater whole of the game, rather than convoluting it.</p>
                     </div>
-
+    <!-- Hidden at the start -->
                     <div class="DetailsBox" id="EmDetails" style="transition: 0.2s;">
                       <p>Em’s expertise stems from an extensive history of editing projects ranging from simple professional applications, published written pieces, to long-term episodic plot outlines and scripting. Applying her expertise to Third Party Applications, she moderates and manages the concepts for every aspect of the game. Mechanic ideas, visual components, and creative aspects are all edited to ensure it maintains a cohesive identity. Additionally, to ensure that this moderation is consistent, she actively involves herself with every aspect of the company, including game construction, narrative development, and visual conceptualization.</p>
                     </div>
@@ -388,25 +371,6 @@ function DropDownArrow(id) {
           </div>
         </div>
 
-      <!-- <div class="MaxBG">
-        <div class="Maxbox box" onmouseover="DropDownArrow('MaxArrow')" onmouseout="DropDownArrow('None')">
-          <div class="content em" id="maxheader">
-            <img src="images/Max Icon.png" class="employicon" id="MaxIcon"></img>
-            <div onclick="Expand('MaxDetails');" class="employtext" id="MaxText">
-              <p><span class="important" style="color:#785A73; font-size: 40px;">Max Gugliotta</span></p>
-              <p>Title: Lead Creative Writer</p>
-              <p >As the Lead Creative Writer, Max ensures the plot of a game and its contents are as interesting and robust as possible.</p>
-            </div>
-          </div>
-
-          <div class="employtext DetailsBox" id="MaxDetails" style="height: 0px;">
-            <p>Max grew up on a PC and its games, while reading almost constantly. He always had a passion for telling stories, often with whatever toys and objects he could find around him. Today, nothing has changed except for the scope. Max intends for anything he’s involved in to provoke thought and inspire, just as the many things that inspired him. He also contributes to game mechanics and programming, making sure games and their players interact well. He wishes for all of the experiences he makes to be full of interesting decisions, memorable stories, and immersive characters. His ultimate goal is to make something that becomes a cultural phenomenon bigger than himself.</p>
-          </div>
-        <button id="MaxArrow" class="arrowbutton MaxArrow" onclick="Expand('MaxDetails');" style="display:none;">V</button>
-
-        </div>
-        </div> -->
-
     <div class="BlackBoxBG" style="background-color: #E88985">
       <div class="BlackBox">
       </div>
@@ -415,8 +379,9 @@ function DropDownArrow(id) {
     </section>
     </div>
 
+<!-- Footer -->
 <div class="bottom aboutbottom">
-  <button class="tablink2"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
+  <button class="tablink2" style="margin-right: 15px;"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://www.tiktok.com/@thirdpartyapplications?is_from_webapp=1&sender_device=pc"><img src="images/Tiktok.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://youtube.com/@ThirdPartyApplications"><img src="images/Youtube.png" width="70" height="70"></img></a></button>
   <button class="tablink2"><a href="https://www.reddit.com/r/3rdpartyApplications/"><img src="images/Reddit.png" width="70" height="70"></img></a></button>

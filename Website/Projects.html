@@ -7,7 +7,6 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <title>About</title>
-<!--    link the stylesheets here-->
 
   <!--<link rel="stylesheet" href="fonts.css">-->
   <style>
@@ -22,14 +21,16 @@
 
 </head>
 
+<!-- Navigation bar at the top of the page -->
 <div class="tab" style="padding: 25px">
   <a href="Home.html"><button class="tablink" style = margin-top:15>Home</button></a>
   <a href="Projects.html"><button class="tablink" style = margin-top:15>Projects</button></a>
   <a href="About.html"><button class="tablink" style = margin-top:15>About</button></a>
 </div>
 
-<body>
+<body id="body" onload="AdjustSliders()" onresize="AdjustSliders()">
 
+<!-- Logo header, including animated icon -->
   <section id="VidSection" class="VidSection">
     <div class="HeightHolderVid" style="margin-bottom: 16vw;">
       <div class="headvidholder" style="width: 70vw;">
@@ -42,6 +43,7 @@
     </div>
   </section>
 
+<!-- Project Overhaul text blurb -->
   <div style="padding:0; margin:0; margin-bottom: 70vh; margin-left: 70px; margin-right: 70px; margin-top: 16vw;">
     <section>
       <div class="shadowbox">
@@ -63,13 +65,14 @@
 </div>
 </div>
 
+<!-- The Behind the Scenes video section -->
 <div class="circleBG" style="padding-bottom: 40px;">
   <div class="circlecut" style="transform: translateY(-10px);background-color: #E88985"></div>
   <div class="circlecut" style="transform: translateY(-50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
   <div class="circlecut" style="transform: translateY(-90px); background-color: #EAD6D9; clip-path: ellipse(52vw 120px);"></div>
 </div>
   <div style="background-color: #8F718A;">
-    <video id="spacevideo" class="spacevideo" src="videos/Final Odyssey Overhaul Trailer.mp4" controls> </video>
+    <img id="spacevideo" class="spacevideo" src="images/Coming Soon Screen.png"> </img>
   </div>
   <div class="circleBG">
     <div class="circlecut" style="transform: translateY(10px);background-color: #E88985"></div>
@@ -79,6 +82,8 @@
 
 <div style="margin-bottom: 50vh;"></div>
 
+<!-- The game title -->
+  <!-- This was once hooked up to the same sort of slider that the other boxes were before they became obsolute. Now we need to figure out a new way to get it to move. -->
 <div>
 <section class="MoveStats" style="position: absolute; height: 221vh; z-index: 4; transform: translateY(-15vh); width: 100%;">
   <div class="holder">
@@ -86,56 +91,71 @@
 </div>
 </section>
 
+<!-- The following section includes all of the slider boxes and their contents -->
+<div id="SlipSlide" style="position: relative;">
 
-<ul>
-  <div style="width: 25%; z-index: 2;">
-    <section class="MoveStats" style="height: 279vh;" id="OffSet">
-      <div class="holder" id="MoveHeight">
-        <img src="images/FOSprite.png" class="SpriteImg" id="SpriteImg" style="transform: translateX(9vw);"></img>
-        <div class="SpritePathBG" style="width: 0vw;" id="SpritePath">
-          <img src="images/ShipPath.png" class="SpritePath"></img>
-        </div>
-        <div class="StatBox" id="FirstBox" style="overflow: hidden; height: 55vh;">
-          <img src="images/TestSquare.png" class="StatImg"></img>
-          <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
-            <p class="StatTitle"> Platforms </p>
-            <p class="StatText"> PC </p>
-            <p class="StatText"> Keyboard and mouse </p>
+<!-- The first box, including the sprite and the white path -->
+  <div id="First" style="z-index: 2;">
+    <section class="MoveStats" id="OffSet">
+      <div class="holder" id="MoveHeightOne">
+        <div id="EverythingBox">
+          <img src="images/FOSprite.png" class="SpriteImg" id="SpriteImg" style="transform: translateX(9vw);"></img>
+          <div>
+            <div class="SpritePathBG" style="width: 0vw;" id="SpritePath">
+              <img src="images/ShipPath.png" class="SpritePath" id="PathImg"></img>
+            </div>
+          </div>
+          <div id="FirstBox">
+            <div class="StatBox" id="FirstBox" style="overflow: hidden; height: 55vh; position: relative; bottom: 0;">
+              <img src="images/TestSquare.png" class="StatImg"></img>
+              <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+                <p class="StatTitle"> Platforms </p>
+                <p class="StatText"> PC </p>
+                <p class="StatText"> Keyboard and mouse </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <div style="width: 25%; margin-top: 70vh;">
-    <section class="MoveStats" style="height: 209vh;">
-      <div class="holder">
-        <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #EE9F75;">
-          <img src="images/TestSquare.png" class="StatImg"></img>
-          <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
-            <p class="StatTitle"> Game Type </p>
-            <p class="StatText"> Top Down RPG </p>
+<!-- The second box -->
+  <div>
+    <section class="MoveStats">
+      <div class="holder" id="MoveHeightTwo">
+        <div id="SecBox" style="z-index: -1">
+          <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #EE9F75;">
+            <img src="images/TestSquare.png" class="StatImg"></img>
+            <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+              <p class="StatTitle"> Game Type </p>
+              <p class="StatText"> Top Down RPG </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <div style="width: 25%; margin-top: 140vh;">
-    <section class="MoveStats" id="VidHeight" style="height: 139vh;">
-      <div class="holder">
-        <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #E88985;">
-          <img src="images/TestSquare.png" class="StatImg"></img>
-          <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
-            <p class="StatTitle"> Genre </p>
-            <p class="StatText"> Adventure, Science Fiction </p>
+<!-- The third box -->
+  <div>
+    <section class="MoveStats" id="VidHeight">
+      <div class="holder" id="MoveHeightThree">
+        <div id="ThirdBox" style="z-index: -1">
+          <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #E88985;">
+            <img src="images/TestSquare.png" class="StatImg"></img>
+            <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+              <p class="StatTitle"> Genre </p>
+              <p class="StatText"> Adventure, Science Fiction </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <div style="width: 25%; margin-top: 210vh;">
+<!-- The forth box -->
+  <div>
     <section>
       <div id="LastBox">
         <div class="StatBox" style="overflow: hidden; border-radius: 0px 100px 0px 0px; background-color: #BB7885;">
@@ -149,13 +169,15 @@
       </div>
     </section>
   </div>
-</ul>
 
+</div>
+
+<!-- The purple section including the games story summary -->
 <div style="background-color: #785A73; height: 75px;"></div>
 
 <div style="padding:0px 50px; margin:0; padding-bottom: 100px; background-color: #8F718A;">
-  <div class="InnieShadowbox" style="border-radius: 0px 0px 100px 100px; transform: translateY(0px) translateX(0px);">
-    <div class="InnieIconbox" style="border-radius: 0px 0px 100px 100px; transform: translateY(-21px) scale(0.98) scaleY(0.95);">
+  <div class="InnieShadowbox" style="border-radius: 0px 0px 100px 100px; padding: 0px 15px; padding-top: 25px; transform: translateY(0px);">
+    <div class="InnieIconbox" style="border-radius: 0px 0px 100px 100px; transform: translateY(-25px)">
       <div style="padding-top: 25px; padding-bottom: 25px;">
         <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> The universe is a bright but vacant place. Humanity has spread across the stars, building up a new future from a tarnished past. Despite years in the cosmos, we have found no signs of life in our explorations. That was, until now. </p>
         <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> The greatest sin of humankind has returned in a new form: War. An unknown force, proclaiming themselves as The Convoy, have commandeered the ancient relics of man’s war machines. They’re hunting for something. Something unknown and unseen. </p>
@@ -170,9 +192,10 @@
 
 </body>
 
+<!-- Footer -->
 <div style="background-color: #8F718A;">
   <div class="bottom">
-    <button class="tablink2"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
+    <button class="tablink2" style="margin-right: 15px;"><a href="https://twitter.com/3rd_Party_Apps"><img src="images/Twitter.png" width="70" height="70"></img></a></button>
     <button class="tablink2"><a href="https://www.tiktok.com/@thirdpartyapplications?is_from_webapp=1&sender_device=pc"><img src="images/Tiktok.png" width="70" height="70"></img></a></button>
     <button class="tablink2"><a href="https://youtube.com/@ThirdPartyApplications"><img src="images/Youtube.png" width="70" height="70"></img></a></button>
     <button class="tablink2"><a href="https://www.reddit.com/r/3rdpartyApplications/"><img src="images/Reddit.png" width="70" height="70"></img></a></button>
@@ -180,41 +203,138 @@
 </div>
 
 <script>
+//The following function adjusts the width of the sliders both when the page is first loaded in and when the window is adjusted
+function AdjustSliders() {
+  let FirstChunk = document.getElementById("EverythingBox"); //FirstChunk includes both the first box and the Spite and path it goes one
+  let SecBox = document.getElementById("SecBox"); //Second slider
+  let ThirdBox = document.getElementById("ThirdBox"); //Third slider
+  let LastBox = document.getElementById("LastBox"); //Final box, which does not move and stays at the bottom
 
+  let body = document.getElementById("body"); //Get the dimensions of the entire webpage, excluding the scrollbar. Window includes the scrollbar and thus gets stuff cut off
+
+  let Chunky = (body.getBoundingClientRect().width / 4); //25% of the width of the webpage. Aka divides into four sections
+
+  FirstChunk.style.width = Chunky + "px"; //No margin because it is flush to the left. Just the width being 25% of webpage
+
+  SecBox.style.width = Chunky + "px";
+  SecBox.style.marginLeft = Chunky + "px"; //Pushed from the left an equal amount as the box.
+
+  ThirdBox.style.width = Chunky + "px";
+  ThirdBox.style.marginLeft = (Chunky*2) + "px"; //Pushed to the third position
+
+  LastBox.style.width = Chunky + "px";
+  LastBox.style.marginLeft = (Chunky*3) + "px"; //Pushed to the forth (last) position
+}
+
+//This actually moves the sliders along with the scroll!
+const SliderScroll = () => {
+  let FirstBox = document.getElementById("FirstBox");  //Grabbing the first slider box
+  let FirstChunk = document.getElementById("EverythingBox"); //Grabbing the first slider box AND the ship and path
+  let MoveHeightOne = document.getElementById("MoveHeightOne"); //The height that the slider box moves from start to finish
+
+  let body = document.getElementById("body"); //Get the dimensions of the entire webpage, excluding the scrollbar. Window includes the scrollbar and thus gets stuff cut off
+
+  let Chunky = (body.getBoundingClientRect().width / 4); // 25% of the width of the webpage. Aka divides into four sections
+
+  let ThirdBox = document.getElementById("ThirdBox"); //Third slider
+  let MoveHeightThree = document.getElementById("MoveHeightThree");
+
+  let LastBox = document.getElementById("LastBox"); //Final box, which does not move and stays at the bottom
+
+  let Seen = window.innerHeight; //What is currently being seen by the person on the website. The veiwer window, essentially.
+
+  var StartOne = MoveHeightOne.getBoundingClientRect().top + FirstBox.getBoundingClientRect().height; // Subtracting the height of the box from the timeline distance. So it starts once the box's bottom meets the bottom of the window.
+  var OnePos = FirstBox.getBoundingClientRect().bottom; //Marks the position of the first box on the timeline.
+  var LastPos = LastBox.getBoundingClientRect().bottom; //Marks the position of the final box on the timeline.
+
+  var StartTwo = MoveHeightTwo.getBoundingClientRect().top + FirstBox.getBoundingClientRect().height; //This is the length of the second boxes timeline with an adjusted start.
+  var TwoPos = SecBox.getBoundingClientRect().bottom; //Marks the position of the second box on the timeline.
+
+  var StartThree = MoveHeightThree.getBoundingClientRect().top + FirstBox.getBoundingClientRect().height; //The length of the third boxes timeline with an adjusted start.
+  var ThreePos = ThirdBox.getBoundingClientRect().bottom; //Marks the position of the third box on the timeline.
+
+  if (LastPos > Seen && StartOne < Seen) { //If the first boxes bottom is against the bottom of the window, and also the last boxes bottom isn't.
+    FirstChunk.style.position = "fixed"; //Make the box follow the bottom of the page.
+    FirstChunk.style.bottom = "0"; //Make sure there is no space between the window bottom and the box bottom.
+    FirstChunk.style.width = Chunky + "px"; //Keep the box the right size.
+  }
+  else {
+    FirstChunk.style.position = "relative"; //Place box at the start of its timeline
+  }
+
+  if (LastPos > Seen && StartTwo < Seen) { //If the second boxes bottom is against the bottom of the window, and also the last boxes bottom isn't.
+    SecBox.style.position = "fixed"; //Make the box follow the bottom of the page.
+    SecBox.style.bottom = "0"; //Make sure there is no space between the window bottom and the box bottom.
+    SecBox.style.width = Chunky + "px"; //Keep the box the right size.
+    SecBox.style.marginLeft = Chunky + "px"; //Keep the offset from the left.
+  }
+  else {
+    SecBox.style.position = "relative"; //Place box at the start of its timeline
+  }
+
+  if (LastPos > Seen && StartThree < Seen) { //If the third boxes bottom is against the bottom of the window, and also the last boxes bottom isn't.
+    ThirdBox.style.position = "fixed"; //Make the box follow the bottom of the page.
+    ThirdBox.style.bottom = "0"; //Make sure there is no space between the window bottom and the box bottom.
+    ThirdBox.style.width = Chunky + "px"; //Keep the box the right size.
+    ThirdBox.style.marginLeft = (Chunky*2) + "px"; //Keep the offset from the left.
+  }
+  else {
+    ThirdBox.style.position = "relative"; //Place box at the start of its timeline
+  }
+
+  if (LastPos < Seen) { //If the last boxes bottom is against the bottom of the window.
+    FirstChunk.style.position = "absolute"; // Normally items are always at the top. So when they need to be positioned differently, asbolute allows you to ignore this.
+    FirstChunk.style.bottom = "0"; //Place box at the end of its timeline
+
+    SecBox.style.position = "absolute";
+    SecBox.style.bottom = "0";
+
+    ThirdBox.style.position = "absolute";
+    ThirdBox.style.bottom = "0";
+  }
+  else {
+
+  }
+}
+
+// This function allows the little ship sprite and the white path to change based on scroll.
 const ShipScroll = () => {
-  let FirstBox = document.getElementById("FirstBox");
-  let LastBox = document.getElementById("LastBox");
-  let MoveHeight = document.getElementById("MoveHeight");
-  let OffSet = document.getElementById("OffSet");
+  let FirstBox = document.getElementById("FirstBox"); //Grabbing the first slider box
+  let LastBox = document.getElementById("LastBox"); //Final box, which does not move and stays at the bottom
 
-  let Sprite = document.getElementById("SpriteImg");
-  let SpritePath = document.getElementById("SpritePath");
+  let TopBuffer = document.getElementById("FirstBox").getBoundingClientRect().height; //The offset of the start of the timeline, so that it starts once the box's bottom meets the bottom of the window.
 
-  var Buffer = OffSet.offsetTop;
-  var Start = MoveHeight.offsetTop;
-  var End = LastBox.offsetTop;
+  let Seen = window.innerHeight; //What is currently being seen by the person on the website. The veiwer window, essentially.
 
-  //Box actually changes during the duration. Tells what the offeset is to the top of the page I beleive.
+  let Sprite = document.getElementById("SpriteImg"); //The little space ship guy.
+  let SpritePath = document.getElementById("SpritePath"); //The box containing the image of the white path. This allows for it to become invisible when the box is reduced.
+  let PathImg = document.getElementById("PathImg"); //The actual image of the white path.
+  let Timeline = document.getElementById("SlipSlide").getBoundingClientRect().height; //Total timeline based on the height of the entire section.
 
-  TimePassed = Start - Buffer;
-  Duration = End - Buffer;
+  var LastPos = LastBox.getBoundingClientRect().bottom; //The final position, aka where all the other boxes go when the end is reached.
+  var PathLength = PathImg.getBoundingClientRect().width; //The total length of the white path based on the image so it doesn't shrink.
 
-  Percentage = (TimePassed / Duration)
+  TotalTime = Timeline - TopBuffer; //The total amount of time once the first box hits the bottom of the window, and ending once its in the same position as the final box.
+  TimePos = TotalTime - (LastPos - Seen); //The positiion of the window subtracting what we can currently see and what is past the final position.
 
-  ShipMove = (Percentage * 83.5);
+  Percentage = TimePos / TotalTime; //The amount of time that has elapsed converted into a percentage.
 
+// SHIPMOVE IS NOT 100% ACCURATE AND NEEDS TO BE DEBUGGED
+  ShipMove = (PathLength * Percentage) + (((PathImg.getBoundingClientRect().left) / 2) + ((Sprite.getBoundingClientRect().width) / 2)); //The amount the ship moves per scroll.
+  //ShipMove works because it takes the total path length (total distance needed to travel) and offsets the ship based on how much of that line is showing.
+  //However, the ship still needs a consisitant offset because it needs to start and end in the first and last sliders white box. That's why there's the complex PathImg and Sprite additions to try and OffSet
+  //These do not work, however. So we need to find a better solution to get the offset right. The pace of movement is otherwise perfect.
 
+  if (0 < Percentage && Percentage < 1) { //As long as the percent isn't negative or above 100%, essentually (1 in this case, to keep it in decimals)
+    Sprite.style.transform = "translateX(" + ShipMove + "px)"; //Move the ship.
+    SpritePath.style.width = (Percentage * PathLength) + "px"; //Determine how much of the white path is showing.
+  }
 
-if (ShipMove > 9)
-{
-  Sprite.style.transform = "translateX(" + ShipMove + "vw)";
-  SpritePath.style.width = ((Percentage * 83.5) - 7) + "vw";
 }
 
+window.addEventListener("scroll", SliderScroll); //Whenever the user scrolls, this is triggered
 
-}
-
-window.addEventListener("scroll", ShipScroll);
+window.addEventListener("scroll", ShipScroll); //Whenever the user scrolls, this is triggered
 
 </script>
 
