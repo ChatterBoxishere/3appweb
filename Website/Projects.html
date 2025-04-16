@@ -28,7 +28,7 @@
   <a href="About.html"><button class="tablink" style = margin-top:15>About</button></a>
 </div>
 
-<body id="body" onload="AdjustSliders()" onresize="AdjustSliders()">
+<body id="body" onload="AdjustSliders('Load')" onresize="AdjustSliders('Size')">
 
 <!-- Logo header, including animated icon -->
   <section id="VidSection" class="VidSection">
@@ -82,24 +82,21 @@
 
 <div style="margin-bottom: 50vh;"></div>
 
-<!-- The game title -->
-  <!-- This was once hooked up to the same sort of slider that the other boxes were before they became obsolute. Now we need to figure out a new way to get it to move. -->
-<div>
-<section class="MoveStats" style="position: absolute; height: 221vh; z-index: 4; transform: translateY(-15vh); width: 100%;">
-  <div class="holder">
-  <important class="GameTitle"> Final Odyssey </important>
-</div>
-</section>
-
 <!-- The following section includes all of the slider boxes and their contents -->
 <div id="SlipSlide" style="position: relative;">
+
+  <!-- The game title -->
+    <!-- This was once hooked up to the same sort of slider that the other boxes were before they became obsolute. Now we need to figure out a new way to get it to move. -->
+  <div id="GameTitle" style="margin: 5vh 0vh; width: 100%;">
+    <important class="GameTitle"> Final Odyssey </important>
+  </div>
 
 <!-- The first box, including the sprite and the white path -->
   <div id="First" style="z-index: 2;">
     <section class="MoveStats" id="OffSet">
       <div class="holder" id="MoveHeightOne">
         <div id="EverythingBox">
-          <img src="images/FOSprite.png" class="SpriteImg" id="SpriteImg" style="transform: translateX(9vw);"></img>
+          <img src="images/FOSprite.png" class="SpriteImg" id="SpriteImg"></img>
           <div>
             <div class="SpritePathBG" style="width: 0vw;" id="SpritePath">
               <img src="images/ShipPath.png" class="SpritePath" id="PathImg"></img>
@@ -203,8 +200,8 @@
 </div>
 
 <script>
-//The following function adjusts the width of the sliders both when the page is first loaded in and when the window is adjusted
-function AdjustSliders() {
+//The following function adjusts the width of the sliders and sets the start position of the ship both when the page is first loaded in and when the window is adjusted
+function AdjustSliders(Mode) {
   let FirstChunk = document.getElementById("EverythingBox"); //FirstChunk includes both the first box and the Spite and path it goes one
   let SecBox = document.getElementById("SecBox"); //Second slider
   let ThirdBox = document.getElementById("ThirdBox"); //Third slider
@@ -224,10 +221,13 @@ function AdjustSliders() {
 
   LastBox.style.width = Chunky + "px";
   LastBox.style.marginLeft = (Chunky*3) + "px"; //Pushed to the forth (last) position
+
 }
 
 //This actually moves the sliders along with the scroll!
 const SliderScroll = () => {
+  let TitleBoy = document.getElementById("GameTitle"); //Grabbing the game title that will follow the sliders
+
   let FirstBox = document.getElementById("FirstBox");  //Grabbing the first slider box
   let FirstChunk = document.getElementById("EverythingBox"); //Grabbing the first slider box AND the ship and path
   let MoveHeightOne = document.getElementById("MoveHeightOne"); //The height that the slider box moves from start to finish
@@ -257,9 +257,15 @@ const SliderScroll = () => {
     FirstChunk.style.position = "fixed"; //Make the box follow the bottom of the page.
     FirstChunk.style.bottom = "0"; //Make sure there is no space between the window bottom and the box bottom.
     FirstChunk.style.width = Chunky + "px"; //Keep the box the right size.
+
+    TitleBoy.style.position = "fixed";
+    TitleBoy.style.bottom = FirstBox.getBoundingClientRect().height + "px";
+    TitleBoy.style.width = (Chunky*4) + "px";
   }
   else {
     FirstChunk.style.position = "relative"; //Place box at the start of its timeline
+    TitleBoy.style.position = "relative";
+    TitleBoy.style.bottom = "0vh";
   }
 
   if (LastPos > Seen && StartTwo < Seen) { //If the second boxes bottom is against the bottom of the window, and also the last boxes bottom isn't.
@@ -291,6 +297,9 @@ const SliderScroll = () => {
 
     ThirdBox.style.position = "absolute";
     ThirdBox.style.bottom = "0";
+
+    TitleBoy.style.position = "absolute";
+    TitleBoy.style.bottom = FirstBox.getBoundingClientRect().height + "px";
   }
   else {
 
@@ -319,15 +328,22 @@ const ShipScroll = () => {
 
   Percentage = TimePos / TotalTime; //The amount of time that has elapsed converted into a percentage.
 
-// SHIPMOVE IS NOT 100% ACCURATE AND NEEDS TO BE DEBUGGED
-  ShipMove = (PathLength * Percentage) + (((PathImg.getBoundingClientRect().left) / 2) + ((Sprite.getBoundingClientRect().width) / 2)); //The amount the ship moves per scroll.
-  //ShipMove works because it takes the total path length (total distance needed to travel) and offsets the ship based on how much of that line is showing.
-  //However, the ship still needs a consisitant offset because it needs to start and end in the first and last sliders white box. That's why there's the complex PathImg and Sprite additions to try and OffSet
-  //These do not work, however. So we need to find a better solution to get the offset right. The pace of movement is otherwise perfect.
+   //The amount the ship moves per scroll. Offset this to the start of the path and center the sprite on that point by subtracting half of the sprite width.
 
-  if (0 < Percentage && Percentage < 1) { //As long as the percent isn't negative or above 100%, essentually (1 in this case, to keep it in decimals)
+  if (0.02 < Percentage && Percentage < 0.975) { //As long as the percent isn't negative or above 100%, essentually (1 in this case, to keep it in decimals)
+    ShipMove = (PathLength * Percentage) + ((PathImg.getBoundingClientRect().left) - ((Sprite.getBoundingClientRect().width)/2));
     Sprite.style.transform = "translateX(" + ShipMove + "px)"; //Move the ship.
     SpritePath.style.width = (Percentage * PathLength) + "px"; //Determine how much of the white path is showing.
+  }
+  else if (Percentage >= 0.975) {
+    ShipMove = (PathLength * 0.975) + ((PathImg.getBoundingClientRect().left) - ((Sprite.getBoundingClientRect().width)/2));
+    Sprite.style.transform = "translateX(" + ShipMove + "px)"; //Move the ship.
+    SpritePath.style.width = (0.975 * PathLength) + "px"; //Determine how much of the white path is showing.
+  }
+  else {
+    ShipMove = (PathLength * 0.02) + ((PathImg.getBoundingClientRect().left) - ((Sprite.getBoundingClientRect().width)/2));
+    Sprite.style.transform = "translateX(" + ShipMove + "px)"; //Move the ship.
+    SpritePath.style.width = (0.02 * PathLength) + "px"; //Determine how much of the white path is showing.
   }
 
 }

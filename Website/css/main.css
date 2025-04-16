@@ -292,12 +292,11 @@ a {
   position: absolute;
   z-index: 3;
   margin-top: 50px;
-  transform: translateX(8.5vw);
 }
 
 /*The white path image itself*/
 .SpritePath {
-  width: 74vw;
+  width: 78vw;
 }
  /*The container of the white path image, allowing only some parts to be visible at a time */
 .SpritePathBG {
@@ -306,7 +305,7 @@ a {
 
   left: 50%;
 
-  width: 74vw;
+  width: 78vw;
   margin-top: 75px;
 
   position: absolute;
@@ -315,7 +314,8 @@ a {
 
   overflow: hidden;
 
-  transform: translateX(0.5vw);
+  transform: translateX(-1.5vw);
+  overflow:
 }
 
 /*how long between stat boxs with scrolls*/
@@ -350,6 +350,8 @@ a {
   margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
+
+  text-wrap: wrap;
 }
 
 /* The subtitle of each game stat below the title. */
@@ -359,6 +361,8 @@ a {
   margin: 0px;
   line-height: 0.7;
   text-align: center;
+
+  text-wrap: wrap;
 }
 
 /* Top pink segment on left in Final Odessey section. */
