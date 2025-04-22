@@ -12,12 +12,12 @@
   <style>
   @font-face {
     font-family: customfont;
-    src: url(3PAlowercasevariant.ttf);
+    src: url(arialroundedmtbold.ttf);
   }
   </style>
 
 
-  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link id="style" href="css/main.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -37,27 +37,27 @@
         <video id="scrollvideo" class="scrollvideo" src="videos/Gift Web Animation.mp4" muted autoplay></video>
       </div>
       <div class="containerhead">
-        <h1 class="pagehead" style="padding-top: 14vw;">PROJECTS</h1>
-        <h2 class="pagesubhead">PRESENTS IN PROGRESS</h2>
+        <h1 class="pagehead" style="padding-top: 13vw; font-size: 10vw;">PROJECTS</h1>
+        <h2 class="pagesubhead" style="font-size: 4.5vw;">PRESENTS IN PROGRESS</h2>
       </div>
     </div>
   </section>
 
 <!-- Project Overhaul text blurb -->
-  <div style="padding:0; margin:0; margin-bottom: 70vh; margin-left: 70px; margin-right: 70px; margin-top: 16vw;">
+  <div style="padding:0; margin:0; margin-bottom: 30vh; margin-left: 70px; margin-right: 70px; margin-top: 16vw;">
     <section>
-      <div class="shadowbox">
-        <div class="iconbox" style="overflow: hidden;">
-          <div style="background-color: #8F718A; height: 75px;">
+      <div class="shadowbox" id="ProjectBox">
+        <div class="iconbox" style="overflow: hidden;" id="ProjectBox">
+          <div style="background-color: #8F718A; height: 10vw; max-height: 100px;">
             <div style="margin-right: 75px;">
               <img src="images/Minus fake button.png" class="FakeButton"></img>
               <img src="images/Box fake button.png" class="FakeButton"></img>
               <img src="images/X fake button.png" class="FakeButton"></img>
             </div>
           </div>
-          <div style="padding-top: 25px; padding-bottom: 25px;">
-              <h2 style="font-size: 100px;">Project Overhaul</h2>
-              <p class="AboveTxt" style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 150px; margin-right: 0px; align-items: center;">Many dreams have found themselves forgotten on the back shelves, collecting dust. Unfinished digital entertainment is one of the many physical remnants of this. These can come in the form of game files that never surpassed the initial development phase, or hard copies of now outdated aspirations. At Third Party Applications, our Project Overhaul strives to bring those shelved concepts to the forefront of modern games. With the generous contributions of our donors, we collect, archive, and revitalize old code. Not simply to preserve it, but to breathe new life into it for current and future generations.</p>
+          <div>
+              <h2 class="ProjectTitle">Project Overhaul</h2>
+              <p class="AboveTxt ProjectText">Many dreams have found themselves forgotten on the back shelves, collecting dust. Unfinished digital entertainment is one of the many physical remnants of this. These can come in the form of game files that never surpassed the initial development phase, or hard copies of now outdated aspirations. At Third Party Applications, our Project Overhaul strives to bring those shelved concepts to the forefront of modern games. With the generous contributions of our donors, we collect, archive, and revitalize old code. Not simply to preserve it, but to breathe new life into it for current and future generations.</p>
           </div>
       </div>
     </div>
@@ -74,11 +74,11 @@
   <div style="background-color: #8F718A;">
     <img id="spacevideo" class="spacevideo" src="images/Coming Soon Screen.png"> </img>
   </div>
-  <div class="circleBG">
-    <div class="circlecut" style="transform: translateY(10px);background-color: #E88985"></div>
-    <div class="circlecut" style="transform: translateY(50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
-    <div class="circlecut" style="transform: translateY(90px); background-color: #EAD6D9; clip-path: ellipse(52vw 120px);"></div>
-  </div>
+<div class="circleBG">
+  <div class="circlecut" style="transform: translateY(10px);background-color: #E88985"></div>
+  <div class="circlecut" style="transform: translateY(50px); background-color: #F5B765; clip-path: ellipse(53vw 100px);"></div>
+  <div class="circlecut" style="transform: translateY(90px); background-color: #EAD6D9; clip-path: ellipse(52vw 120px);"></div>
+</div>
 
 <div style="margin-bottom: 50vh;"></div>
 
@@ -87,11 +87,13 @@
 
   <!-- The game title -->
     <!-- This was once hooked up to the same sort of slider that the other boxes were before they became obsolute. Now we need to figure out a new way to get it to move. -->
-  <div id="GameTitle" style="margin: 5vh 0vh; width: 100%;">
+  <div id="GameTitle" style="margin: 3vh 0vh; width: 100%;">
     <important class="GameTitle"> Final Odyssey </important>
   </div>
 
 <!-- The first box, including the sprite and the white path -->
+<div id="DeskStats">
+
   <div id="First" style="z-index: 2;">
     <section class="MoveStats" id="OffSet">
       <div class="holder" id="MoveHeightOne">
@@ -105,8 +107,8 @@
           <div id="FirstBox">
             <div class="StatBox" id="FirstBox" style="overflow: hidden; height: 55vh; position: relative; bottom: 0;">
               <img src="images/TestSquare.png" class="StatImg"></img>
-              <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
-                <p class="StatTitle"> Platforms </p>
+              <div class="InnieIconbox" style="padding: 10px; padding-top: 30px; height: 50vh; min-width: 100px;">
+                <p class="StatTitle"> Plat&shyforms </p>
                 <p class="StatText"> PC </p>
                 <p class="StatText"> Keyboard and mouse </p>
               </div>
@@ -124,7 +126,7 @@
         <div id="SecBox" style="z-index: -1">
           <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #EE9F75;">
             <img src="images/TestSquare.png" class="StatImg"></img>
-            <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+            <div class="InnieIconbox" style="padding: 10px; padding-top: 30px; height: 50vh;">
               <p class="StatTitle"> Game Type </p>
               <p class="StatText"> Top Down RPG </p>
             </div>
@@ -141,7 +143,7 @@
         <div id="ThirdBox" style="z-index: -1">
           <div class="StatBox" style="overflow: hidden; border-radius: 0px; background-color: #E88985;">
             <img src="images/TestSquare.png" class="StatImg"></img>
-            <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+            <div class="InnieIconbox" style="padding: 10px; padding-top: 30px; height: 50vh;">
               <p class="StatTitle"> Genre </p>
               <p class="StatText"> Adventure, Science Fiction </p>
             </div>
@@ -157,7 +159,7 @@
       <div id="LastBox">
         <div class="StatBox" style="overflow: hidden; border-radius: 0px 100px 0px 0px; background-color: #BB7885;">
           <img src="images/TestSquare.png" class="StatImg"></img>
-          <div class="InnieIconbox" style="padding: 30px; height: 50vh;">
+          <div class="InnieIconbox" style="padding: 10px; padding-top: 30px; height: 50vh;">
             <p class="StatTitle"> Rating </p>
             <p class="StatText"> NR for Not Rated </p>
             <p class="StatText"> Fear, Violence, Language </p>
@@ -168,6 +170,75 @@
   </div>
 
 </div>
+</div>
+
+<!-- The stat set-up for the mobile layout -->
+<div id="MobileStats">
+
+    <section class="MoveStats" id="TimelineMobile">
+
+      <div class="holder" style="position: sticky; top: 15vh; z-index: -1">
+        <div id="GameTitleMobile" style="margin: 5vw 0vh; width: 100%;">
+          <important class="GameTitle"> Final Odyssey </important>
+        </div>
+      </div>
+
+      <div class="holder" style="position: sticky; top: 31vh; margin-bottom: 34vh;">
+        <div id="EverythingBoxMobile">
+          <img src="images/FOSprite.png" class="SpriteImg" id="SpriteImgMobile"></img>
+              <div class="SpritePathBG" id="SpritePathMobile">
+                <img src="images/ShipPathMobile.png" class="SpritePath" id="PathImgMobile"></img>
+              </div>
+        <div id="FirstBoxMobile" style="height: 16vh; min-height: 110px; overflow: hidden; background-color: #F5B765; padding-top: 10px; border-radius: 25px 25px 0px 0px;">
+          <ul style="width: 100%;">
+            <img src="images/TestSquare.png" class="StatImg"></img>
+            <div class="InnieIconbox" style="padding-top: 10px; margin: 5px; border-radius: 25px; width: 100%; height: 95px;">
+              <p class="StatTitle"> Plat&shyforms </p>
+              <p class="StatText"> PC, Keyboard and mouse </p>
+            </div>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+      <div id="SecondBoxMobile" class="holder" style="position: sticky; top: 48vh; margin-top: 50vh; margin-bottom: 17vh; z-index: -1">
+        <div style="height: 16vh; min-height: 110px; overflow: hidden; background-color: #EE9F75; padding-top: 10px;">
+          <ul style="width: 100%;">
+            <img src="images/TestSquare.png" class="StatImg"></img>
+            <div class="InnieIconbox" style="padding-top: 10px; margin: 5px; border-radius: 25px; width: 100%; height: 95px;">
+              <p class="StatTitle"> Game Type </p>
+              <p class="StatText"> Top Down RPG </p>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="holder" style="position: sticky; top: 65vh; margin-top: 50vh; z-index: -1;">
+        <div style="height: 16vh; min-height: 110px; overflow: hidden; background-color: #E88985; padding-top: 10px;">
+          <ul>
+            <ul style="width: 100%;">
+              <img src="images/TestSquare.png" class="StatImg"></img>
+              <div class="InnieIconbox" style="padding-top: 10px; margin: 5px; border-radius: 25px; width: 100%; height: 95px;">
+                <p class="StatTitle"> Genre </p>
+                <p class="StatText"> Adventure, Science Fiction </p>
+              </div>
+            </ul>
+          <ul>
+        </div>
+      </div>
+
+    </section>
+
+  <div id="FinalSlot" style="height: 16vh; min-height: 110px; overflow: hidden; background-color: #BB7885; padding-top: 10px; z-index: -1">
+    <ul style="width: 100%;">
+      <img src="images/TestSquare.png" class="StatImg"></img>
+      <div class="InnieIconbox" style="padding-top: 10px; margin: 5px; border-radius: 25px; width: 100%; height: 95px;">
+        <p class="StatTitle"> Rating </p>
+        <p class="StatText"> Not Rated: Fear, Violence, Language </p>
+      </div>
+    </ul>
+  </div>
+</div>
 
 <!-- The purple section including the games story summary -->
 <div style="background-color: #785A73; height: 75px;"></div>
@@ -176,10 +247,10 @@
   <div class="InnieShadowbox" style="border-radius: 0px 0px 100px 100px; padding: 0px 15px; padding-top: 25px; transform: translateY(0px);">
     <div class="InnieIconbox" style="border-radius: 0px 0px 100px 100px; transform: translateY(-25px)">
       <div style="padding-top: 25px; padding-bottom: 25px;">
-        <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> The universe is a bright but vacant place. Humanity has spread across the stars, building up a new future from a tarnished past. Despite years in the cosmos, we have found no signs of life in our explorations. That was, until now. </p>
-        <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> The greatest sin of humankind has returned in a new form: War. An unknown force, proclaiming themselves as The Convoy, have commandeered the ancient relics of man’s war machines. They’re hunting for something. Something unknown and unseen. </p>
-        <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> As captain of a freighter ship, you’ve been hired once again to deliver cargo across the stars. This task comes with one requirement: You must never open the cargo. Your journey will meet its end once you dispose of this container into a distant black hole, destroying it forever. </p>
-        <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;"> While you go about hiring your own crew to set off on this journey, The Convey spreads their reach. Evaluate where your priorities lie. Protect the lives of your crew or complete the job you’ve set out to accomplish. Time is of the essence. You only have so much left until it’s too late.</p>
+        <p class="SpaceStory"> The universe is a bright but vacant place. Humanity has spread across the stars, building up a new future from a tarnished past. Despite years in the cosmos, we have found no signs of life in our explorations. That was, until now. </p>
+        <p class="SpaceStory"> The greatest sin of humankind has returned in a new form: War. An unknown force, proclaiming themselves as The Convoy, have commandeered the ancient relics of man’s war machines. They’re hunting for something. Something unknown and unseen. </p>
+        <p class="SpaceStory"> As captain of a freighter ship, you’ve been hired once again to deliver cargo across the stars. This task comes with one requirement: You must never open the cargo. Your journey will meet its end once you dispose of this container into a distant black hole, destroying it forever. </p>
+        <p class="SpaceStory"> While you go about hiring your own crew to set off on this journey, The Convey spreads their reach. Evaluate where your priorities lie. Protect the lives of your crew or complete the job you’ve set out to accomplish. Time is of the essence. You only have so much left until it’s too late.</p>
       </div>
     </div>
   </div>
@@ -348,9 +419,51 @@ const ShipScroll = () => {
 
 }
 
+const ShipScrollMobile = () => {
+  let TimelineRough = document.getElementById("TimelineMobile");
+  let BottomBuff = document.getElementById("FinalSlot");
+
+  let TimePlace = document.getElementById("FirstBoxMobile");
+
+  let Seen = window.innerHeight;
+
+  var Timeline = (TimelineRough.getBoundingClientRect().height - (Seen * (3/4)));
+  var TimePassed = ((BottomBuff.getBoundingClientRect().top + BottomBuff.getBoundingClientRect().height) - Seen);
+
+  const PathLength = document.getElementById("PathImgMobile").getBoundingClientRect().height;
+  const SpritePath = document.getElementById("SpritePathMobile");
+
+  let Sprite = document.getElementById("SpriteImgMobile");
+
+  Percentage = 1 - (TimePassed/Timeline);
+
+
+  console.log(Timeline);
+  console.log(TimePassed);
+
+  if (0 < Percentage && Percentage < 0.96) { //As long as the percent isn't negative or above 100%, essentually (1 in this case, to keep it in decimals)
+    ShipMove = Percentage * PathLength;
+    Sprite.style.transform = "rotate(90deg) translateX(" + ShipMove + "px)" //Move the ship.
+    SpritePath.style.height = (Percentage * PathLength) + "px"; //Determine how much of the white path is showing.
+    console.log("YES");
+  }
+  else if (Percentage >= 1) {
+    ShipMove = 0.96 * PathLength;
+    Sprite.style.transform = "rotate(90deg) translateX(" + ShipMove + "px)" //Move the ship.
+    SpritePath.style.height = (0.96 * PathLength) + "px"; //Determine how much of the white path is showing.
+    console.log("NO");
+  }
+  else if (Percentage < 0) {
+    ShipMove = 0;
+    Sprite.style.transform = "rotate(90deg) translateX(0px)" //Move the ship.
+    SpritePath.style.height ="0px"; //Determine how much of the white path is showing.
+  }
+}
 window.addEventListener("scroll", SliderScroll); //Whenever the user scrolls, this is triggered
 
 window.addEventListener("scroll", ShipScroll); //Whenever the user scrolls, this is triggered
+
+window.addEventListener("scroll", ShipScrollMobile);
 
 </script>
 

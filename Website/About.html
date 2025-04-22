@@ -13,9 +13,11 @@
   <style>
   @font-face {
     font-family: customfont;
-    src: url(3PAlowercasevariant.ttf);
+    src: url(arialroundedmtbold.ttf);
   }
   </style>
+
+  <link id="style" href="css/main.css" rel="stylesheet" type="text/css">
 
 <script>
 
@@ -45,6 +47,10 @@ function AdjustBigBox() {
   const LemShadow = document.getElementById("LemShadow"); //The color block sillhoute for Lemon
   const EmShadow = document.getElementById("EmShadow"); //The color block sillhoute for Lemon
 
+  const Chat = document.getElementById("Chat"); //Big boxs that contains the text box, arrows, and icons
+  const Lem = document.getElementById("Lem");
+  const Em = document.getElementById("Em");
+
   const Chats = document.getElementById("ChatDetails"); //Contents of Chatters box
   const Lems = document.getElementById("LemDetails"); //Contents of Lemons box
   const Ems = document.getElementById("EmDetails"); //Contents of Ems box
@@ -68,6 +74,7 @@ function AdjustBigBox() {
 
   if (ChatShadow.style.opacity === "0") { //When the icon is visible (aka box is open)
     BigBoxChat.style.height = ChatAboveHeight + ChatHiddenHeight + 70 + "px"; //Add together the height of visible and hidden content to keep box open.
+    Chat.style.transform = "translateY(" + (ChatHiddenHeight - 20) + "px)";
   }
   else { //When the icon is hidden (aka box is closed)
     BigBoxChat.style.height = ChatAboveHeight + 40 + "px"; //Set the height to only the intiially visible content. Aka keep the box closed.
@@ -75,6 +82,7 @@ function AdjustBigBox() {
 
   if (LemShadow.style.opacity === "0") {
     BigBoxLem.style.height = LemAboveHeight + LemHiddenHeight + 70 + "px";
+    Lem.style.transform = "translateY(" + (LemHiddenHeight - 20) + "px)";
   }
   else {
     BigBoxLem.style.height = LemAboveHeight + 40 + "px";
@@ -82,6 +90,7 @@ function AdjustBigBox() {
 
   if (EmShadow.style.opacity === "0") {
     BigBoxEm.style.height = EmAboveHeight + EmHiddenHeight + 70 + "px";
+    Em.style.transform = "translateY(" + (EmHiddenHeight - 20) + "px)";
   }
   else {
     BigBoxEm.style.height = EmAboveHeight + 40 + "px";
@@ -111,6 +120,14 @@ function Expand(id) {
   const LemShadow = document.getElementById("LemShadow");
   const EmShadow = document.getElementById("EmShadow");
 
+  const ChatIconMobile = document.getElementById("ChatIconMobile"); //Normal icons mobile
+  const LemIconMobile = document.getElementById("LemIconMobile");
+  const EmIconMobile = document.getElementById("EmIconMobile");
+
+  const ChatShadowMobile = document.getElementById("ChatShadowMobile"); //Icon sillhoutes mobile
+  const LemShadowMobile = document.getElementById("LemShadowMobile");
+  const EmShadowMobile = document.getElementById("EmShadowMobile");
+
   const BigBoxChat = document.getElementById("BigBoyBoxChat"); //The contents of Chatters box when it's open
   const LittleChat = document.getElementById("SmallStuffChat"); //The contents of Chatters box when it's closed
   var ChatHiddenHeight = Chats.getBoundingClientRect().height; //The height of the intially hidden content
@@ -135,6 +152,8 @@ function Expand(id) {
       ChatShadow.style.opacity = "0"; //Make shadow invisible
       ChatIcon.style.opacity = "1"; //Make icon visible
 
+      ChatShadowMobile.style.opacity = "0";
+      ChatIconMobile.style.opacity = "1"
     }
     else
     {
@@ -143,6 +162,9 @@ function Expand(id) {
       Chat.style.transform = "translateY(-20px)"; //Pull icon to top
       ChatShadow.style.opacity = "1"; //Make shadow visible
       ChatIcon.style.opacity = "0"; //Make icon invisible
+
+      ChatShadowMobile.style.opacity = "1";
+      ChatIconMobile.style.opacity = "0"
     }
   }
   else if (id == "LemDetails") {
@@ -153,6 +175,9 @@ function Expand(id) {
       Lem.style.transform = "translateY(" + (LemHiddenHeight - 20) + "px)"; //Push icon down to bottom
       LemShadow.style.opacity = "0"; //Make shadow invisible
       LemIcon.style.opacity = "1"; //Make icon visible
+
+      LemShadowMobile.style.opacity = "0";
+      LemIconMobile.style.opacity = "1"
     }
     else
     {
@@ -161,6 +186,9 @@ function Expand(id) {
       Lem.style.transform = "translateY(-30px)"; //Pull icon to top
       LemShadow.style.opacity = "1"; //Make shadow visible
       LemIcon.style.opacity = "0"; //Make icon invisible
+
+      LemShadowMobile.style.opacity = "1";
+      LemIconMobile.style.opacity = "0"
     }
   }
   else if (id == "EmDetails") {
@@ -171,6 +199,9 @@ function Expand(id) {
       Em.style.transform = "translateY(" + (EmHiddenHeight - 20) + "px)"; //Push icon down to bottom
       EmShadow.style.opacity = "0"; //Make shadow invisible
       EmIcon.style.opacity = "1"; //Make icon visible
+
+      EmShadowMobile.style.opacity = "0";
+      EmIconMobile.style.opacity = "1"
     }
     else
     {
@@ -179,6 +210,9 @@ function Expand(id) {
       Em.style.transform = "translateY(-30px)"; //Pull icon to top
       EmShadow.style.opacity = "1"; //Make shadow visible
       EmIcon.style.opacity = "0"; //Make icon invisible
+
+      EmShadowMobile.style.opacity = "1";
+      EmIconMobile.style.opacity = "0"
     }
   }
 
@@ -214,8 +248,6 @@ function DropDownArrow(id) {
 
 </script>
 
-  <link href="css/main.css" rel="stylesheet" type="text/css">
-
 </head>
 <!-- Navigation bar at the top of the page -->
 <div class="tab" style="padding: 25px">
@@ -233,8 +265,8 @@ function DropDownArrow(id) {
       <video id="scrollvideo" class="scrollvideo" src="videos/Hat Web Animation.mp4" muted autoplay></video>
     </div>
     <div class="containerhead">
-      <h1 class="pagehead" style="padding-top: 16vw;">ABOUT US</h1>
-      <h2 class="pagesubhead">WELCOME TO THE PARTY</h2>
+      <h1 class="pagehead" style="padding-top: 13vw; font-size: 10vw;">ABOUT US</h1>
+      <h2 class="pagesubhead" style="font-size: 4.5vw;">WELCOME TO THE PARTY</h2>
     </div>
   </div>
 </section>
@@ -250,8 +282,8 @@ function DropDownArrow(id) {
       <div class="InnieShadowbox">
         <div class="InnieIconbox">
           <div style="padding-top: 25px; padding-bottom: 25px;">
-            <h2 style="font-size: 100px;">Company Origin</h2>
-            <p style="font-size: 30px; letter-spacing: 1.5px; line-height: 1; padding: 0px 100px; margin-right: 0px;">It began with a simple conversation. In 2023, game enthusiast Christian Mezzaroba and digital artist Terran Mehan discussed their respective dreams. Each was interested in creating a game but lacked the concept to develop. With a stroke of luck and inspiration, an abandoned project was donated to the pair to fashion their own creation. However, they still struggled with the expertise needed to complete the project. Fortunately, soon after, they onboarded skilled creative Em Bradford, who brought with them the spark necessary to spur the trio into motion. With this new collective of hard-working and passionate developers, the project evolved to become the foundation of Third Party Applications.</p>
+            <h2 class="MisTitle">Company Origin</h2>
+            <p class="OriginText">It began with a simple conversation. In 2023, game enthusiast Christian Mezzaroba and digital artist Terran Mehan discussed their respective dreams. Each was interested in creating a game but lacked the concept to develop. With a stroke of luck and inspiration, an abandoned project was donated to the pair to fashion their own creation. However, they still struggled with the expertise needed to complete the project. Fortunately, soon after, they onboarded skilled creative Em Bradford, who brought with them the spark necessary to spur the trio into motion. With this new collective of hard-working and passionate developers, the project evolved to become the foundation of Third Party Applications.</p>
           </div>
         </div>
       </div>
@@ -281,6 +313,10 @@ function DropDownArrow(id) {
     <!-- Visible at the start -->
       <div class="ChatBG">
         <div class="Chatbox box" onmouseover="DropDownArrow('ChatArrow')" onmouseout="DropDownArrow('None')">
+          <div id="EmployMobile">
+            <img src="images/Chatter Icon Blank.png" id="ChatShadowMobile" style="opacity: 1;"></img>
+            <img src="images/Chatter Icon.png" id="ChatIconMobile"></img>
+          </div>
           <div class="content chat" id="chatheader">
             <div id="Chat" class="employ">
               <img src="images/Chatter Icon Blank.png" class="employshadow" id="ChatShadow" style="opacity: 1;"></img>
@@ -312,6 +348,10 @@ function DropDownArrow(id) {
     <!-- Visible at the start -->
       <div class="LemBG">
         <div class="Lemonbox box" onmouseover="DropDownArrow('LemArrow')" onmouseout="DropDownArrow('None')">
+          <div id="EmployMobile">
+            <img src="images/Terran Icon Blank.png" id="LemShadowMobile" style="opacity: 1;"></img>
+            <img src="images/Terran Icon.png" id="LemIconMobile"></img>
+          </div>
           <div class="content lem" id="lemheader">
             <div id="Lem" class="employ" style="transform: translateY(-30px);">
               <img src="images/Terran Icon.png" class="employicon" id="LemIcon"></img>
@@ -344,6 +384,10 @@ function DropDownArrow(id) {
     <!-- Visible at the start -->
       <div class="EmBG">
         <div class="Embox box" onmouseover="DropDownArrow('EmArrow')" onmouseout="DropDownArrow('None')">
+          <div id="EmployMobile">
+            <img src="images/Em Icon Blank.png" id="EmShadowMobile" style="opacity: 1;"></img>
+            <img src="images/Em Icon.png" id="EmIconMobile"></img>
+          </div>
           <div class="content em" id="emheader">
             <div id="Em" class="employ" style="transform: translateY(-30px);">
               <img src="images/Em Icon.png" class="employicon" id="EmIcon"></img>

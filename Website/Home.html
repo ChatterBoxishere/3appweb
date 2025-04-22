@@ -11,11 +11,11 @@
   <style>
   @font-face {
     font-family: customfont;
-    src: url(3PAlowercasevariant.ttf);
+    src: url(arialroundedmtbold.ttf);
   }
   </style>
 
-  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link id="style" href="css/main.css" rel="stylesheet" type="text/css">
 
 </head>
 <!-- Navigation bar at the top of the page -->
@@ -29,10 +29,13 @@
 
 function AdjustVid() {
 
-  const SidebarHeight = document.getElementById("sidebar");
-  var HeightTrue = SidebarHeight.getBoundingClientRect().height;
+  const SideTop = document.getElementById("SideTop");
+  const SideBottom = document.getElementById("SideBottom");
+  var HeightTrue = SideTop.getBoundingClientRect().height + SideBottom.getBoundingClientRect().height;
 
-  document.getElementById("VidHeight").style.height = HeightTrue + "px";
+  const VidSlider = document.getElementById("VidHeight");
+
+  VidSlider.style.height = HeightTrue + "px";
 }
 
 function PresentOpen() {
@@ -77,32 +80,52 @@ function PresentClose() {
 
 <!-- Game updates section, including button, text, and video -->
   <!-- The left side section with the text and button -->
-  <aside id="sidebar" class="sidebar">
-    <div style="padding: 10px;">
-      <div class="shadowbox shadowbutton">
+  <div id="VideoMobileBG" style="background-color: #8F718A;">
+    <video id="homevideoMobile" class="homevideo" src="videos/Final Odyssey Overhaul Trailer.mp4" autoplay muted loop></video>
+  </div>
+
+<ul id="SideBySide" style="background-color: #8F718A; width: 100%;">
+
+  <div id="sidebar" class="sidebar">
+    <div id="SideTop" style="padding: 10px;">
+      <div id="DeskButton" class="shadowbox shadowbutton">
         <div class="iconbox iconbutton">
           <a href="Projects.html" style="z-index: 5;"><img src="images/Final Odyssey Logo Yellow.svg" width="100%"></img></a>
         </div>
       </div>
     </div>
-    <div style="padding: 10px;">
-    <div class="shadowbox">
+    <div id="SideBottom" style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px; margin-top: 10px;">
+    <div class="shadowbox" id="MobileSide">
         <div class="iconbox">
           <div style="padding: 10px 0px;">
             <p class="important" style="text-align:center; padding-bottom: 25px; color: #785A73;">Survive the final frontier with this restored classic.</p>
-            <h2 style="color: #785A73;">News</h2>
+            <h2 style="color: #785A73; font-size: 50px;">News</h2>
             <p style="color: #785A73; font-weight: bold; text-align: left; padding-bottom: 25px;">First created in the 1980s rush of independent game developers, this basic-code game is now being adapted for modern platforms. Inspired by popular resource-management and space-combat titles, Final Odyssey is a true staple of its time. With the gracious digital donation of its previous developer, Third Party Applications is working to show you a forgotten gem of the past. If you would like to see more updates on the restoration of this project, we invite you to follow our social media at the bottom of the page.</p>
           </div>
         </div>
       </div>
     </div>
-  </aside>
-  <!-- The video that follows you. -->
-<section class="MoveVid" id="VidHeight" style="height: 175vh;">
-  <div class="holder">
-    <video id="homevideo" class="homevideo" src="videos/Final Odyssey Overhaul Trailer.mp4" autoplay muted loop></video>
   </div>
-</secion>
+
+  <!-- The video that follows you. -->
+<section class="MoveVid" id="VidHeight">
+    <div class="holder" id="SpaceHolder">
+      <video id="homevideo" class="homevideo" src="videos/Final Odyssey Overhaul Trailer.mp4" autoplay muted loop></video>
+
+    <div id="MobileButton">
+    <div class="shadowbox shadowbutton" style="border-radius: 70px;">
+      <div class="iconbox iconbutton" style="border-radius: 70px;">
+        <a href="Projects.html" style="z-index: 5;"><img src="images/Final Odyssey Logo Yellow.svg" width="100%"></img></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+</ul>
+
 <!-- End section slope decorations -->
 <div class="circleBG">
   <div class="circlecut" style="transform: translateY(10px);background-color: #E88985"></div>
@@ -119,21 +142,21 @@ function PresentClose() {
  <div class="MissButton" id="MissButton" onmouseover="PresentOpen()" onmouseout="PresentClose()" style="margin-bottom: 10vh;">
    <!-- The presents! -->
    <ul style="position: absolute; margin-left: 8vw; margin-right: 8vw; transform: translateY(-50%)">
-     <img src="images/Yellow Present.png" width="25%" style="rotate: -15deg">
+     <img id="YellowPres" src="images/Yellow Present.png" width="25%" style="rotate: -15deg">
      <section width="25%" style="transform: translateY(-10%)">
        <img id="Lid" src="images/Purple Present Lid.png" width="50%" style="transition: 0.2s;">
        <a href="About.html" class="MisLink"><button class="misbutt" id="misbutt">MORE</button></a>
        <img src="images/Purple Present.png" width= "50%">
      </section>
-     <img src="images/Orange Present.png" width="25%" style="rotate: 15deg">
+     <img id="OrangePres"src="images/Orange Present.png" width="25%" style="rotate: 15deg">
    </ul>
    <!-- The text box -->
     <div class="mission">
       <div class="shadowbox">
         <div class="iconbox">
-          <div style="padding: 25px;">
-            <h2 style="font-size: 100px; padding top: 25px;">Our Mission</h2>
-            <p class="important mistext" style="font-weight: normal; line-height: 1; font-size: 40px;">At Third Party Applications, we push the boundaries of game development to unite forgotten media with the modern age. As an independent collective passionate about creativity, code, and history, we work to ensure no project of the past will be lost to time.</p>
+          <div class="MistextContain">
+            <h2 class="MisTitle">Our Mission</h2>
+            <p class="important mistext">At Third Party Applications, we push the boundaries of game development to unite forgotten media with the modern age. As an independent collective passionate about creativity, code, and history, we work to ensure no project of the past will be lost to time.</p>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ body {
     background-color: #EAD6D9;
     text-align: center;
     color: #785A73;
+    scrollbar-gutter: stable both-edges;
 }
 
 /*Creates a circle shape that is used in the curve effect.*/
@@ -30,10 +31,9 @@ body {
 /* The section of detection for the top logo animation. */
 .VidSection {
   height: 50vw;
-  /* min-height: 100vmin; */
   position: relative;
   z-index: 1;
-  background-color: inherit;
+  background-color: #EAD6D9;
 }
 
 .HeightHolderVid {
@@ -42,6 +42,7 @@ body {
 }
 
 .headvidholder {
+  height: 30px;
   width: 75vw;
   position: absolute;
   z-index: -1;
@@ -51,8 +52,8 @@ body {
 /* The actual video of the animated page logo. */
 .scrollvideo {
   float: left;
-  overflow: hidden;
-  width: 100%;
+  width: 99%;
+  clip-path: polygon(10% 0%, 90% 0%, 90% 99%, 0% 99%);
 }
 
 /* Section that containers the header text. */
@@ -63,7 +64,7 @@ body {
 
 /* Page header. */
 .pagehead{
-  font-size: 11vw;
+  font-size: 7vw;
   text-align: left;
   margin: 0;
 }
@@ -71,7 +72,7 @@ body {
 /* Page subheader. */
 .pagesubhead{
   text-align: left;
-  font-size: 7vw;
+  font-size: 5vw;
   margin: 0;
 }
 
@@ -105,7 +106,7 @@ p {
 /* If small text needs to have a little more 'umph'. */
 .important{
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 35px;
 }
 
 /* Header area in which the buttons are held */
@@ -201,15 +202,16 @@ a {
 /* HOMEPAGE */
 /* The content along the left on the moving video on the home page. Seperates the content on the left from the video content. */
 .sidebar {
-  text-align: left;
-  padding-top: 10px;
-  padding-left: 15px;
-  width: 25%;
-  min-width: 300px;
-  box-sizing: border-box;
-  float: left;
+  text-align: center;
+  padding-right: 20px;
+  width: 30%;
   background-color: #8F718A;
   padding-left: 15px;
+  min-width: 350px;
+}
+
+#SpaceHolder {
+  left: 0;
 }
 
 /* The hat on the bottom of the Home page is seperated into a slightly different side bar, as seen below. */
@@ -222,7 +224,12 @@ a {
   padding-left: 50px;
 }
 
-/* The text on the right on the bottom of the homepage, the summary of the mission of the company. */
+/*The padding around the mission statement at the bottom of Home.*/
+.MistextContain {
+  padding: 25px;
+}
+
+/* The text on the bottom of the homepage, the summary of the mission of the company. */
 .mission{
   margin-bottom: 50px;
   margin-left: 125px;
@@ -232,7 +239,7 @@ a {
 /* The More About Us button at the bottom of the page. */
  .misbutt {
    font-family: customfont;
-   font-size: 3vw;
+   font-size: 2.5vw;
    color: #785A73;
    background-color: inherit;
    border: none;
@@ -250,9 +257,21 @@ a {
    transition: 0.2s;
  }
 
+ .MisTitle {
+   font-size: 70px;
+   padding top: 25px;
+ }
+
+ /*Text of the actual Mission section*/
+ .mistext {
+   font-weight: normal;
+   line-height: 1;
+   font-size: 35px;
+ }
+
 /* What happens to the More About Us button when hovered over */
  a.MisLink:hover button.misbutt {
-   font-size: 4vw;
+   font-size: 3vw;
  }
 
 /* This section ensures the little presents on the home page look nice and stay alongside each other */
@@ -265,14 +284,32 @@ a {
 /* PROJECTS PAGE IS BELOW */
 /* Final Odessy game title */
 .FakeButton {
-  height: 65px;
-  padding: 5px;
+  height: 8vw;
+  max-height: 75px;
+  padding: 1vw;
   float: right;
 }
 
+.ProjectTitle {
+  font-size: 70px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ProjectText {
+  font-size: 27px;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  padding: 0px 150px;
+  margin-right: 0px;
+  align-items: center;
+}
+
  .GameTitle {
-   font-size: 105px;
+   font-size: 90px;
    height: 100vh;
+   text-align: center;
  }
 
 /* The side section in the Final Odessy bottom section */
@@ -306,7 +343,8 @@ a {
   left: 50%;
 
   width: 78vw;
-  margin-top: 75px;
+  height: 100px;
+  margin-top: 50px;
 
   position: absolute;
   z-index: 2;
@@ -343,26 +381,31 @@ a {
 
 /* Title of each game stat along the top. */
 .StatTitle {
-  font-size: 50px;
+  font-size: 3vw;
   font-weight: bold;
   padding: 0px;
   margin: 0px;
   margin-bottom: 20px;
   margin-top: 20px;
   text-align: center;
+  line-height: 0.8;
 
-  text-wrap: wrap;
+  overflow-wrap: break-word;
+  hyphens: manual;
+  hyphenate-character: auto;
 }
 
 /* The subtitle of each game stat below the title. */
 .StatText {
-  font-size: 45px;
+  font-size: 2.25vw;
   padding: 0px;
   margin: 0px;
-  line-height: 0.7;
+  line-height: 0.9;
   text-align: center;
 
-  text-wrap: wrap;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  hyphenate-character: auto;
 }
 
 /* Top pink segment on left in Final Odessey section. */
@@ -380,6 +423,14 @@ a {
   padding: 50px;
 }
 
+.SpaceStory {
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  padding: 0px 100px;
+  margin-right: 0px;
+}
+
 /* The Final Odessey 'behind the scenes' placeholder video. */
 .spacevideo {
   align: center;
@@ -395,9 +446,10 @@ a {
 /* BACK TO HOME PAGE. */
 /* Video of Final Odessey on the Home page. */
 .homevideo {
-  width: 70vw;
+  width: 100%;
   padding-left: 2px;
   position: static;
+  padding-top: 10px;
 
   border-radius: 20px;
   overflow: hidden;
@@ -407,13 +459,14 @@ a {
 .MoveVid {
   height: 175vh;
   background-color: #8F718A;
+  margin-right: 25px;
+  width: 75%;
 }
 
 /* Basically makes it so the actual video moves. */
 section.MoveVid div.holder {
   position: sticky;
   top: 15vh;
-  margin-left: 25vw;
 }
 
 /* Sometimes things overlap text that aren't supposed to. This puts the text on top. Currently being used on the Restoration Initiative description. */
@@ -423,6 +476,14 @@ section.MoveVid div.holder {
 }
 
 /* ABOUT PAGE BELOW */
+.OriginText {
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  padding: 0px 100px;
+  margin-right: 0px;
+}
+
 /* The small images that are on the left of each box in the about page */
 .employicon {
   width: 300px;
@@ -504,7 +565,7 @@ section.MoveVid div.holder {
   border: none;
   font-family: customfont;
   color: white;
-  font-size: 50px;
+  font-size: 30px;
   margin-left: 49%;
   padding: 0;
   margin: 0;
@@ -517,7 +578,7 @@ section.MoveVid div.holder {
 
 /* The arrow then bolds whenever you hover directly over it */
 .arrowbutton:hover {
-  font-size: 55px;
+  font-size: 35px;
 }
 
 /* These are for the boxes on the about page */
@@ -579,4 +640,297 @@ section.MoveVid div.holder {
 .tablink2:hover {
   transform: scale(1.25);
   filter: drop-shadow(4px 4px #785A73);
+}
+
+/*All specifications for desktop*/
+
+#VideoMobileBG {
+  display: none;
+}
+#MobileButton {
+  display: none;
+}
+#EmployMobile {
+  display: none;
+}
+#MobileStats {
+  display: none;
+}
+#GameTitleMobile {
+  display: none;
+}
+#GameTitle {
+  display: block;
+}
+
+/*ALL changes for mobile or thinner screen*/
+@media screen and (max-width: 800px) {
+  /* For general use */
+  body {
+    	text-align: center;
+  }
+  p {
+    padding-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+  }
+
+/* HOME PAGE */
+  /* The slider section with the video and button */
+  .sidebar {
+    text-align: left;
+    padding-left: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #8F718A;
+    padding-left: 15px;
+  }
+
+  #homevideoMobile {
+    margin: auto;
+    width: 90%;
+  }
+  #VideoMobileBG {
+    display: block;
+  }
+  #MobileButton {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    background-color: #8F718A;
+  }
+  #homevideo {
+    display: none;
+    float: none;
+  }
+  #DeskButton {
+    display: none;
+  }
+  #MobileSide {
+    padding-top: none;
+    margin-top: none;
+  }
+  .MoveVid {
+    min-width: 0px;
+    height: 175vh;
+    margin-right: 25px;
+    width: 75%;
+  }
+  /* Home page Mission section */
+  .MistextContain {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #YellowPres {
+    display: none;
+  }
+  #OrangePres {
+    display: none;
+  }
+  .mission{
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .misbutt {
+    font-size: 8vw;
+  }
+  a.MisLink:hover button.misbutt {
+    font-size: 9vw;
+  }
+  .MisTitle {
+    font-size: 50px;
+  }
+  .mistext {
+    font-size: 30px;
+  }
+
+/* About Page for Mobile! */
+  .OriginText {
+    font-size: 25px;
+    padding: 0px 30px;
+  }
+  /* About Page Founder boxed */
+  #Chat {
+    display: none;
+  }
+  #Lem {
+    display: none;
+  }
+  #Em {
+    display: none;
+  }
+  #EmployMobile {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 150px;
+    padding-bottom: 25px;
+  }
+  #ChatShadowMobile {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  #ChatIconMobile {
+    width: 250px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  #EmShadowMobile {
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  #EmIconMobile {
+    width: 250px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  #LemShadowMobile {
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  #LemIconMobile {
+    width: 250px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  .content {
+    padding-left: 0;
+  }
+  .employtext {
+    margin-left: 0;
+  }
+/* Projects Page for Mobile */
+  /* Text for Project Overhaul */
+  .ProjectTitle {
+    font-size: 70px;
+  }
+  .ProjectText {
+    font-size: 25px;
+    padding: 0px 30px;
+  }
+  .MoveStats {
+    height: 200vh;
+  }
+  #ProjectBox {
+    border-radius: 75px;
+  }
+  /* The slider section for F/O! This is still a work in progress */
+  .GameTitle {
+    font-size: 12vw;
+    height: 3vw;
+  }
+  #GameTitleMobile {
+    display: block;
+  }
+  #GameTitle {
+    display: none;
+  }
+  #DeskStats {
+    display: none;
+  }
+  #MobileStats {
+    display: block;
+  }
+
+  .SpriteImg {
+    float: left;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+    margin-top: 10px;
+    margin-left: 3vw;
+    transform: rotate(90deg);
+  }
+
+  .StatBox {
+    border-radius: 50px 50px 0px 0px;
+  }
+  .StatImg{
+    width: 100px;
+    height: 100px;
+    padding-right: 10px;
+    margin-left: 3vw;
+  }
+  .SpritePathBG {
+
+    transform: translateY(-3.5vh);
+
+    margin-top: 75px;
+
+    float: left;
+    left: 0;
+
+    margin-left: 3vw;
+
+    height: 54vh;
+    width: 100px;
+
+    position: absolute;
+    z-index: 2;
+
+    overflow: hidden;
+  }
+  .SpritePath {
+    height: 54vh;
+    width: auto;
+  }
+
+  #StatInnie {
+    margin-top: 5px;
+    height: 105px;
+    border-radius: 30px;
+    width: 100%;
+    margin: auto;
+  }
+  .StatTitle {
+    margin-top: 0;
+    padding-top: 5px;
+    font-size: 40px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .StatText {
+    font-size: 23px;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .SpaceStory {
+    font-size: 25px;
+    padding: 0px 30px;
+  }
 }
