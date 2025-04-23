@@ -22,13 +22,15 @@
 </head>
 
 <!-- Navigation bar at the top of the page -->
-<div class="tab" style="padding: 25px">
+<div class="tab" id="Header" style="padding: 25px">
   <a href="Home.html"><button class="tablink" style = margin-top:15>Home</button></a>
   <a href="Projects.html"><button class="tablink" style = margin-top:15>Projects</button></a>
   <a href="About.html"><button class="tablink" style = margin-top:15>About</button></a>
 </div>
 
 <body id="body" onload="AdjustSliders('Load')" onresize="AdjustSliders('Size')">
+
+  <div style="height: 50px; display: block;"></div>
 
 <!-- Logo header, including animated icon -->
   <section id="VidSection" class="VidSection">
@@ -278,6 +280,8 @@ function AdjustSliders(Mode) {
   let ThirdBox = document.getElementById("ThirdBox"); //Third slider
   let LastBox = document.getElementById("LastBox"); //Final box, which does not move and stays at the bottom
 
+  let Title = document.getElementById("GameTitle");
+
   let body = document.getElementById("body"); //Get the dimensions of the entire webpage, excluding the scrollbar. Window includes the scrollbar and thus gets stuff cut off
 
   let Chunky = (body.getBoundingClientRect().width / 4); //25% of the width of the webpage. Aka divides into four sections
@@ -292,6 +296,8 @@ function AdjustSliders(Mode) {
 
   LastBox.style.width = Chunky + "px";
   LastBox.style.marginLeft = (Chunky*3) + "px"; //Pushed to the forth (last) position
+
+  Title.style.width = body.getBoundingClientRect().width + "px";
 
 }
 

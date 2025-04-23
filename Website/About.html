@@ -250,7 +250,7 @@ function DropDownArrow(id) {
 
 </head>
 <!-- Navigation bar at the top of the page -->
-<div class="tab" style="padding: 25px">
+<div class="tab" id="Header" style="padding: 25px">
   <button class="tablink" style = margin-top:15><a href="Home.html">Home</a></button>
   <button class="tablink" style = margin-top:15>P<a href="Projects.html">rojects</a></button>
   <button class="tablink" style = margin-top:15><a href="About.html">About</a></button>
@@ -258,13 +258,15 @@ function DropDownArrow(id) {
 
 <body onload="StartBigBox()" onresize="AdjustBigBox()">
 
+  <div style="height: 50px; display: block;"></div>
+
 <!-- Logo header, including animated icon -->
 <section id="VidSection" class="VidSection">
   <div class="HeightHolderVid" style="margin-bottom: 16vw;">
-    <div class="headvidholder">
-      <video id="scrollvideo" class="scrollvideo" src="videos/Hat Web Animation.mp4" muted autoplay></video>
+    <div class="headvidholder" style="width: 70vw; transform: translateX(-15vw);">
+      <video id="scrollvideo" class="scrollvideo" src="videos/Cake Web Animation.mp4" muted autoplay></video>
     </div>
-    <div class="containerhead">
+    <div class="containerhead" style="margin-left: 33vw;">
       <h1 class="pagehead" style="padding-top: 13vw; font-size: 10vw;">ABOUT US</h1>
       <h2 class="pagesubhead" style="font-size: 4.5vw;">WELCOME TO THE PARTY</h2>
     </div>
